@@ -16,6 +16,6 @@
 ## 헬름 차트 저장소 등록하기
 
 ```bash
-$ helm repo add eduv2 https://k8s-edu.github.io/k8s-edu_Books/k8sInfra/v2/helm-charts/
+$ helm repo add eduv2 https://k8s-edu.github.io/edu_Book_k8sInfra_v2/helm-charts/
 $ helm repo update
 ```
