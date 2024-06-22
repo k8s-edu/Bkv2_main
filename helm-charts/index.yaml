@@ -22,7 +22,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2024-06-02T23:12:53.249878+09:00"
+    created: "2024-06-22T12:44:48.1732787+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -57,7 +57,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2024-06-02T23:12:53.252342+09:00"
+    created: "2024-06-22T12:44:48.1891545+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -76,4 +76,24 @@ entries:
     urls:
     - metallb-0.13.10.tgz
     version: 0.13.10
-generated: "2024-06-02T23:12:53.245943+09:00"
+  nfs-subdir-external-provisioner:
+  - apiVersion: v1
+    appVersion: 4.0.2
+    created: "2024-06-22T12:44:48.1917981+09:00"
+    description: nfs-subdir-external-provisioner is an automatic provisioner that
+      used your *already configured* NFS server, automatically creating Persistent
+      Volumes.
+    digest: 06f9e6972df4527579bc303553a04db138886ab8664dff07a2746638f3e2e75b
+    home: https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
+    keywords:
+    - nfs
+    - storage
+    - provisioner
+    kubeVersion: '>=1.9.0-0'
+    name: nfs-subdir-external-provisioner
+    sources:
+    - https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
+    urls:
+    - nfs-subdir-external-provisioner-4.0.18.tgz
+    version: 4.0.18
+generated: "2024-06-22T12:44:48.1473391+09:00"
