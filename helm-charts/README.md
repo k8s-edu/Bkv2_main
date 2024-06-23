@@ -8,6 +8,7 @@
 
 - MetalLB
 - Jenkins
+- nfs-subdir-external-provisioner
 
 ## 헬름 설치하기
 헬름 설치는 [공식 문서](https://helm.sh/docs/intro/install/)를 참조하여 설치합니다.
