@@ -99,5 +99,5 @@ helm install another-nfs-subdir-external-provisioner nfs-subdir-external-provisi
     --set nfs.server=y.y.y.y \
     --set nfs.path=/another/exported/path \
     --set storageClass.name=another-nfs-client \
-    --set storageClass.provisionerName=k8s-sigs.io/second-nfs-subdir-external-provisioner
+    --set storageClass.provisionerName=k8s-sigs.io/another-nfs-subdir-external-provisioner
 ```
