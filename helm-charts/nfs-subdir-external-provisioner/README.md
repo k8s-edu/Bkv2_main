@@ -7,8 +7,8 @@ The [NFS subdir external provisioner](https://github.com/kubernetes-sigs/nfs-sub
 ## TL;DR;
 
 ```console
-$ helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
-$ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
+$ helm repo add edu-v2 https://iac-sources.github.io/helm-charts/
+$ helm install nfs-subdir-external-provisioner edu-v2/nfs-subdir-external-provisioner \
     --set nfs.server=x.x.x.x \
     --set nfs.path=/exported/path
 ```
@@ -24,10 +24,10 @@ This charts installs custom [storage class](https://kubernetes.io/docs/concepts/
 
 ## Installing the Chart
 
-To install the chart with the release name `my-release`:
+To install the chart with the release name `nfs-subdir-external-provisioner`:
 
 ```console
-$ helm install my-release nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
+$ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
     --set nfs.server=x.x.x.x \
     --set nfs.path=/exported/path
 ```
@@ -38,10 +38,10 @@ The command deploys the given storage class in the default configuration. It can
 
 ## Uninstalling the Chart
 
-To uninstall/delete the `my-release` deployment:
+To uninstall/delete the `nfs-subdir-external-provisioner` deployment:
 
 ```console
-$ helm delete my-release
+$ helm delete nfs-subdir-external-provisioner
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
@@ -95,9 +95,9 @@ The following tables lists the configurable parameters of this chart and their d
 It is possible to install more than one provisioner in your cluster to have access to multiple nfs servers and/or multiple exports from a single nfs server. Each provisioner must have a different `storageClass.provisionerName` and a different `storageClass.name`. For example:
 
 ```console
-helm install second-nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
+helm install another-nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
     --set nfs.server=y.y.y.y \
-    --set nfs.path=/other/exported/path \
-    --set storageClass.name=second-nfs-client \
+    --set nfs.path=/another/exported/path \
+    --set storageClass.name=another-nfs-client \
     --set storageClass.provisionerName=k8s-sigs.io/second-nfs-subdir-external-provisioner
 ```
