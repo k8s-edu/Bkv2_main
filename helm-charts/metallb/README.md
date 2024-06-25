@@ -13,14 +13,14 @@ A network load-balancer implementation for Kubernetes using standard routing pro
 Before install MetalLB by Helm chart, setup repository.
 
 ``` bash
-$ helm repo add edu-v2 https://iac-sources.github.io/helm-charts/
+$ helm repo add edu-k8s https://iac-sources.github.io/helm-charts/
 $ helm repo update
 ```
 
 Then, Install MetalLB
 
 ``` bash
-$ helm install metallb edu-v2/metallb --namespace=metallb-system --create-namespace
+$ helm install metallb edu-k8s/metallb --namespace=metallb-system --create-namespace
 ```
 
 > **Tip**: To check installation, using `helm list`

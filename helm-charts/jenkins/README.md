@@ -17,14 +17,14 @@ Inspired by the awesome work of [Carlos Sanchez](https://github.com/carlossg).
 Before install Jenkins by Helm chart, setup repository.
 
 ``` bash
-$ helm repo add edu-v2 https://iac-sources.github.io/helm-charts/
+$ helm repo add edu-k8s https://iac-sources.github.io/helm-charts/
 $ helm repo update
 ```
 
 Then, Install Jenkins
 
 ``` bash
-$ helm install jenkins edu-v2/jenkins
+$ helm install jenkins edu-k8s/jenkins
 ```
 
 > **Tip**: To check installation, using `helm list`
@@ -36,7 +36,7 @@ To see all configurable options with detailed comments, visit the chart's [value
 
 ```console
 # Helm 3
-$ helm show values edu-v2/jenkins
+$ helm show values edu-k8s/jenkins
 ```
 
 For a summary of all configurable options, see [VALUES_SUMMARY.md](https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/VALUES_SUMMARY.md).
