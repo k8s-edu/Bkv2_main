@@ -22,11 +22,11 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2024-06-23T16:25:15.7658466+09:00"
+    created: "2024-06-25T17:50:13.5137905+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
-    digest: feedd3ff0a8c2a18b4065306387920ebe85e4219301057a1362f175fbe6fe840
+    digest: 1af5f2168679f88fa58439697e648558a26caf3379333040ceda54f8e047b613
     home: https://www.jenkins.io/
     icon: https://get.jenkins.io/art/jenkins-logo/logo.svg
     keywords:
@@ -57,7 +57,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2024-06-23T16:25:15.7728873+09:00"
+    created: "2024-06-25T17:50:13.5182968+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -65,7 +65,7 @@ entries:
       version: 0.13.10
     description: A network load-balancer implementation for Kubernetes using standard
       routing protocols
-    digest: 86769799571f6841247beb651ec2245fa32f1c9a22fa52534cd31dd34adfce9c
+    digest: e00478bca4c09b4cc94febae511ef39c3c715835a2dbde6d07634cd8b15d6b2b
     home: https://metallb.universe.tf
     icon: https://metallb.universe.tf/images/logo/metallb-white.png
     kubeVersion: '>= 1.19.0-0'
@@ -78,12 +78,12 @@ entries:
     version: 0.13.10
   nfs-subdir-external-provisioner:
   - apiVersion: v1
-    appVersion: 4.0.2
-    created: "2024-06-23T16:25:15.773887+09:00"
+    appVersion: 4.0.0
+    created: "2024-06-25T17:50:13.5210998+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
-    digest: 7f1fccfd24c92088625bc69ef761943aeee8a12a8a44dfbedfafa37af54c5c67
+    digest: bd0f7b26a818cb8574c941a81984016c15c49fa11bb3ea79fe9015f762df3841
     home: https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
     keywords:
     - nfs
@@ -96,4 +96,4 @@ entries:
     urls:
     - nfs-subdir-external-provisioner-4.0.18.tgz
     version: 4.0.18
-generated: "2024-06-23T16:25:15.7550737+09:00"
+generated: "2024-06-25T17:50:13.5029449+09:00"
