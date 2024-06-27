@@ -103,6 +103,7 @@ jenkins:
       enableCaptcha: false
       users:
       - id: "admin"
+        password: "admin"
         properties:
         - "apiToken"
         - "mailer"
