@@ -9,10 +9,10 @@ jenkins:
   - kubernetes:
       containerCap: 10
       containerCapStr: "10"
-      jenkinsTunnel: "jenkins-agent.default.svc.cluster.local:50000"
-      jenkinsUrl: "http://jenkins.default.svc.cluster.local:80"
+      jenkinsTunnel: "jenkins-agent.ci-cd.svc.cluster.local:50000"
+      jenkinsUrl: "http://jenkins.ci-cd.svc.cluster.local:80"
       name: "kubernetes"
-      namespace: "default"
+      namespace: "ci-cd"
       podLabels:
       - key: "jenkins/jenkins-jenkins-agent"
         value: "true"
@@ -40,7 +40,7 @@ jenkins:
         id: "98d73d53e16a7cb91a7b32c4919957504f5605e430e5ca4da5878e8d7a0092ff"
         label: "jenkins-jenkins-agent"
         name: "default"
-        namespace: "default"
+        namespace: "ci-cd"
         nodeUsageMode: NORMAL
         podRetention: "never"
         runAsGroup: "993"
