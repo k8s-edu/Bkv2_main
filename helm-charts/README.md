@@ -5,7 +5,6 @@
 
 🧰 제공하는 차트는 다음과 같습니다.
 
-
 - MetalLB
 - Jenkins
 - nfs-subdir-external-provisioner
@@ -19,6 +18,6 @@
 ## 헬름 차트 저장소 등록하기
 
 ```bash
-$ helm repo add edu-k8s https://k8s-edu.github.io/edu_Book_k8sInfra_v2/helm-charts/
+$ helm repo add edu-k8s https://k8s-edu.github.io/Bkv2_main/helm-charts/
 $ helm repo update
 ```
