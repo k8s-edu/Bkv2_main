@@ -10,7 +10,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.1.0
-    created: "2024-07-07T11:11:48.485277+09:00"
+    created: "2024-07-08T21:36:17.3494545+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -62,7 +62,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2024-07-07T11:11:48.488316+09:00"
+    created: "2024-07-08T21:36:17.3625627+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -97,7 +97,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2024-07-07T11:11:48.48938+09:00"
+    created: "2024-07-08T21:36:17.3674405+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -105,9 +105,9 @@ entries:
       version: 0.13.10
     description: A network load-balancer implementation for Kubernetes using standard
       routing protocols
-    digest: e00478bca4c09b4cc94febae511ef39c3c715835a2dbde6d07634cd8b15d6b2b
+    digest: c9171edccbb3a60b428fbd83ad2c44a3700f26ba3ab0acc349c3136e2d9f1467
     home: https://metallb.universe.tf
-    icon: https://metallb.universe.tf/images/logo/metallb-white.png
+    icon: https://metallb.universe.tf/images/logo/metallb-blue.png
     kubeVersion: '>= 1.19.0-0'
     name: metallb
     sources:
@@ -119,7 +119,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2024-07-07T11:11:48.48987+09:00"
+    created: "2024-07-08T21:36:17.3713901+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -146,7 +146,7 @@ entries:
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
     appVersion: v2.53.0
-    created: "2024-07-07T11:11:48.494396+09:00"
+    created: "2024-07-08T21:36:17.3879836+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
@@ -194,4 +194,4 @@ entries:
     urls:
     - prometheus-25.22.1.tgz
     version: 25.22.1
-generated: "2024-07-07T11:11:48.483359+09:00"
+generated: "2024-07-08T21:36:17.3354587+09:00"
