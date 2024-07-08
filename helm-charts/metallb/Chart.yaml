@@ -8,7 +8,7 @@ dependencies:
 description: A network load-balancer implementation for Kubernetes using standard
   routing protocols
 home: https://metallb.universe.tf
-icon: https://metallb.universe.tf/images/logo/metallb-white.png
+icon: https://metallb.universe.tf/images/logo/metallb-blue.png
 kubeVersion: '>= 1.19.0-0'
 name: metallb
 sources:
