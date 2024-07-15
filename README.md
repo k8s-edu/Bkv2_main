@@ -11,5 +11,7 @@
   - **ch4**
     - [InBuilder](https://github.com/k8s-edu/Bkv2_sub_InBuilder)
   - **ch5**
+    - [echo-ip](https://github.com/k8s-edu/Bkv2_sub_echo-ip) 
     - [dashboard](https://github.com/k8s-edu/Bkv2_sub_dashboard) 
+    - [blue-green](https://github.com/k8s-edu/Bkv2_sub_blue-green) 
 
