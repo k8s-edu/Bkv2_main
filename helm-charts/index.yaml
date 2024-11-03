@@ -10,7 +10,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.1.0
-    created: "2024-07-08T21:36:17.3494545+09:00"
+    created: "2024-11-03T15:39:04.4262649+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -62,7 +62,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2024-07-08T21:36:17.3625627+09:00"
+    created: "2024-11-03T15:39:04.4338767+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -94,10 +94,80 @@ entries:
     urls:
     - jenkins-5.1.12.tgz
     version: 5.1.12
+  kube-prometheus-stack:
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: v0.77.2
+    created: "2024-11-03T15:39:04.4560602+09:00"
+    dependencies:
+    - condition: crds.enabled
+      name: crds
+      repository: ""
+      version: 0.0.0
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 5.26.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 4.40.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 8.5.*
+    - condition: windowsMonitoring.enabled
+      name: prometheus-windows-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 0.7.*
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: 85d955d80c6ba4238f68c69877637ef440913ed772530c9ceee4e9c65d8f11fd
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.19.0-0'
+    maintainers:
+    - email: andrew@quadcorps.co.uk
+      name: andrewgkew
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: kube-prometheus-stack@sisti.pt
+      name: GMartinez-Sisti
+    - email: github@jkroepke.de
+      name: jkroepke
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: quentin.bisson@gmail.com
+      name: QuentinBisson
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - kube-prometheus-stack-65.5.1.tgz
+    version: 65.5.1
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2024-07-08T21:36:17.3674405+09:00"
+    created: "2024-11-03T15:39:04.4650289+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -119,7 +189,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2024-07-08T21:36:17.3713901+09:00"
+    created: "2024-11-03T15:39:04.4686094+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -146,7 +216,7 @@ entries:
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
     appVersion: v2.53.0
-    created: "2024-07-08T21:36:17.3879836+09:00"
+    created: "2024-11-03T15:39:04.4779011+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
@@ -194,4 +264,4 @@ entries:
     urls:
     - prometheus-25.22.1.tgz
     version: 25.22.1
-generated: "2024-07-08T21:36:17.3354587+09:00"
+generated: "2024-11-03T15:39:04.407326+09:00"
