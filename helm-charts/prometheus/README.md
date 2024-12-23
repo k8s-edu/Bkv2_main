@@ -1,6 +1,6 @@
 # Prometheus
 
-_This is a Helm chart, modified for educational purposes_ from [prometheus](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus)
+_This is a Helm chart, modified for educational purposes_ from [prometheus-community](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus)
 
 [Prometheus](https://prometheus.io/), a [Cloud Native Computing Foundation](https://cncf.io/) project, is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts if some condition is observed to be true.
 
@@ -14,8 +14,8 @@ This chart bootstraps a [Prometheus](https://prometheus.io/) deployment on a [Ku
 ## Get Repository Info
 
 ```console
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
+$ helm repo add edu-k8s https://iac-sources.github.io/helm-charts/
+$ helm repo update
 ```
 
 _See [helm repository](https://helm.sh/docs/helm/helm_repo/) for command documentation._
@@ -25,7 +25,7 @@ _See [helm repository](https://helm.sh/docs/helm/helm_repo/) for command documen
 Starting with version 16.0, the Prometheus chart requires Helm 3.7+ in order to install successfully. Please check your `helm` release before installation.
 
 ```console
-helm install [RELEASE_NAME] prometheus-community/prometheus
+helm install [RELEASE_NAME] edu-k8s/prometheus
 ```
 
 _See [configuration](#configuration) below._
@@ -62,10 +62,15 @@ A [`values.schema.json`](https://helm.sh/docs/topics/charts/#schema-files) file 
 ## Upgrading Chart
 
 ```console
-helm upgrade [RELEASE_NAME] prometheus-community/prometheus --install
+helm upgrade [RELEASE_NAME] edu-k8s/prometheus --install
 ```
 
 _See [helm upgrade](https://helm.sh/docs/helm/helm_upgrade/) for command documentation._
+
+### To 26.0
+
+This release changes default version of promethues to v3.0.0, See official [migration guide](https://prometheus.io/docs/prometheus/latest/migration/#prometheus-3-0-migration-guide
+) and [release notes](https://github.com/prometheus/prometheus/releases/tag/v3.0.0) for more details.
 
 ### To 25.0
 
@@ -140,7 +145,7 @@ kubectl delete sts -l app=prometheus
 After that do the actual upgrade:
 
 ```console
-helm upgrade -i prometheus prometheus-community/prometheus
+helm upgrade -i prometheus edu-k8s/prometheus
 ```
 
 ### To 20.0
@@ -170,7 +175,7 @@ If Prometheus is used as deployment the updatestrategy has been changed to "Recr
 All files in `templates/server` directory has been moved to `templates` directory.
 
 ```bash
-helm upgrade [RELEASE_NAME] prometheus-community/prometheus --version 19.0.0
+helm upgrade [RELEASE_NAME] edu-k8s/prometheus --version 19.0.0
 ```
 
 ### To 18.0
@@ -185,7 +190,7 @@ Before you update, please scale down the `prometheus-server` deployment to `0` t
 # In 17.x
 kubectl scale deploy prometheus-server --replicas=0
 # Upgrade
-helm upgrade [RELEASE_NAME] prometheus-community/prometheus --version 18.0.0
+helm upgrade [RELEASE_NAME] edu-k8s/prometheus --version 18.0.0
 ```
 
 ### To 17.0
@@ -198,7 +203,7 @@ Before you update, please scale down the `prometheus-server` deployment to `0` t
 # In 16.x
 kubectl scale deploy prometheus-server --replicas=0
 # Upgrade
-helm upgrade [RELEASE_NAME] prometheus-community/prometheus --version 17.0.0
+helm upgrade [RELEASE_NAME] edu-k8s/prometheus --version 17.0.0
 ```
 
 ### To 16.0
@@ -211,7 +216,7 @@ Before you update, please scale down the `prometheus-server` deployment to `0` t
 # In 15.x
 kubectl scale deploy prometheus-server --replicas=0
 # Upgrade
-helm upgrade [RELEASE_NAME] prometheus-community/prometheus --version 16.0.0
+helm upgrade [RELEASE_NAME] edu-k8s/prometheus --version 16.0.0
 ```
 
 ### To 15.0
@@ -279,7 +284,7 @@ Assuming you have an existing release of the prometheus chart, named `prometheus
 See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](./values.yaml), or run these configuration commands:
 
 ```console
-helm show values prometheus-community/prometheus
+helm show values edu-k8s/prometheus
 ```
 
 You may similarly use the above configuration commands on each chart [dependency](#dependencies) to see its configurations.
@@ -324,7 +329,7 @@ serverFiles:
 ```
 
 ```console
-helm install [RELEASE_NAME] prometheus-community/prometheus -f values.yaml -f service1-alert.yaml -f service2-alert.yaml
+helm install [RELEASE_NAME] edu-k8s/prometheus -f values.yaml -f service1-alert.yaml -f service2-alert.yaml
 ```
 
 ### RBAC Configuration

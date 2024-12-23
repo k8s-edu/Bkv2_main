@@ -60,12 +60,14 @@ configmapReload:
     ##
     image:
       repository: quay.io/prometheus-operator/prometheus-config-reloader
-      tag: v0.74.0
+      tag: v0.78.2
       # When digest is set to a non-empty value, images will be pulled by digest (regardless of tag value).
       digest: ""
       pullPolicy: IfNotPresent
 
-    # containerPort: 9533
+    ## config-reloader's container port and port name for probes and metrics
+    containerPort: 8080
+    containerPortName: metrics
 
     ## Additional configmap-reload container arguments
     ## Set to null for argumentless flags
@@ -91,6 +93,33 @@ configmapReload:
 
     ## Security context to be added to configmap-reload container
     containerSecurityContext: {}
+
+    ## Settings for Prometheus reloader's readiness, liveness and startup probes
+    ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+    ##
+
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: metrics
+        scheme: HTTP
+      periodSeconds: 10
+      initialDelaySeconds: 2
+
+    readinessProbe:
+      httpGet:
+        path: /healthz
+        port: metrics
+        scheme: HTTP
+      periodSeconds: 10
+
+    startupProbe:
+      enabled: false
+      httpGet:
+        path: /healthz
+        port: metrics
+        scheme: HTTP
+      periodSeconds: 10
 
     ## configmap-reload resource requests and limits
     ## Ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -348,7 +377,7 @@ server:
     ## Redirect ingress to an additional defined port on the service
     # servicePort: 8081
 
-    ## Prometheus server Ingress hostnames with optional path
+    ## Prometheus server Ingress hostnames with optional path (passed through tpl)
     ## Must be provided if Ingress is enabled
     ##
     hosts: []
@@ -360,14 +389,14 @@ server:
     # pathType is only for k8s >= 1.18
     pathType: Prefix
 
-    ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
+    ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services. (passed through tpl)
     extraPaths: []
     # - path: /*
     #   backend:
     #     serviceName: ssl-redirect
     #     servicePort: use-annotation
 
-    ## Prometheus server Ingress TLS configuration
+    ## Prometheus server Ingress TLS configuration (hosts passed through tpl)
     ## Secrets must be manually created in the namespace
     ##
     tls: []
@@ -424,7 +453,7 @@ server:
   ##
   podDisruptionBudget:
     enabled: false
-    maxUnavailable: 1
+    # maxUnavailable: 1
     # minAvailable: 1
     ## unhealthyPodEvictionPolicy is available since 1.27.0 (beta)
     ## https://kubernetes.io/docs/tasks/run-application/configure-pdb/#unhealthy-pod-eviction-policy

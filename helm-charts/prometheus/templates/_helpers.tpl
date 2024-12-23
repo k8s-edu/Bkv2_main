@@ -27,7 +27,6 @@ Create unified labels for prometheus components
 {{- define "prometheus.common.metaLabels" -}}
 app.kubernetes.io/version: {{ .Chart.AppVersion }}
 helm.sh/chart: {{ include "prometheus.chart" . }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/part-of: {{ include "prometheus.name" . }}
 {{- with .Values.commonMetaLabels}}
 {{ toYaml . }}
@@ -74,10 +73,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
-Create a fully qualified alertmanager name for communicating with the user via NOTES.txt
+Create a fully qualified alertmanager name for communicating and check to ensure that `alertmanager` exists before trying to use it with the user via NOTES.txt
 */}}
 {{- define "prometheus.alertmanager.fullname" -}}
+{{- if .Subcharts.alertmanager -}}
 {{- template "alertmanager.fullname" .Subcharts.alertmanager -}}
+{{- else -}}
+{{- "alertmanager not found" -}}
+{{- end -}}
 {{- end -}}
 
 {{/*
