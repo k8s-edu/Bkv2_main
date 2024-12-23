@@ -10,7 +10,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.1.0
-    created: "2024-11-03T15:39:04.4262649+09:00"
+    created: "2024-12-23T15:55:21.4314869+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -62,7 +62,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2024-11-03T15:39:04.4338767+09:00"
+    created: "2024-12-23T15:55:21.4401764+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -105,7 +105,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v0.77.2
-    created: "2024-11-03T15:39:04.4560602+09:00"
+    created: "2024-12-23T15:55:21.469112+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -167,7 +167,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2024-11-03T15:39:04.4650289+09:00"
+    created: "2024-12-23T15:55:21.482893+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -189,7 +189,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2024-11-03T15:39:04.4686094+09:00"
+    created: "2024-12-23T15:55:21.4875019+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -215,27 +215,27 @@ entries:
         - name: Upstream Project
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
-    appVersion: v2.53.0
-    created: "2024-11-03T15:39:04.4779011+09:00"
+    appVersion: v3.0.1
+    created: "2024-12-23T15:55:21.4928568+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
       repository: https://prometheus-community.github.io/helm-charts
-      version: 1.11.*
+      version: 1.13.*
     - condition: kube-state-metrics.enabled
       name: kube-state-metrics
       repository: https://prometheus-community.github.io/helm-charts
-      version: 5.20.*
+      version: 5.27.*
     - condition: prometheus-node-exporter.enabled
       name: prometheus-node-exporter
       repository: https://prometheus-community.github.io/helm-charts
-      version: 4.36.*
+      version: 4.42.*
     - condition: prometheus-pushgateway.enabled
       name: prometheus-pushgateway
       repository: https://prometheus-community.github.io/helm-charts
-      version: 2.13.*
+      version: 2.15.*
     description: Prometheus is a monitoring system and time series database.
-    digest: f02d70ce64e6d4704b858e7a6bdfef322f9a07dab865fd5ec0b616aa7f30d0f5
+    digest: 2b97bcf937f37ad65700d42fb460a0fb00cdef25bfd9b0d3195ee9c4678cbd83
     home: https://prometheus.io/
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -262,6 +262,6 @@ entries:
     - https://github.com/kubernetes/kube-state-metrics
     type: application
     urls:
-    - prometheus-25.22.1.tgz
-    version: 25.22.1
-generated: "2024-11-03T15:39:04.407326+09:00"
+    - prometheus-26.0.1.tgz
+    version: 26.0.1
+generated: "2024-12-23T15:55:21.4163912+09:00"
