@@ -1,5 +1,37 @@
 apiVersion: v1
 entries:
+  fluent-bit:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Updated Fluent Bit OCI image to v3.2.2."
+    apiVersion: v1
+    appVersion: 3.2.2
+    created: "2024-12-28T08:24:51.505753+09:00"
+    description: Fast and lightweight log processor and forwarder or Linux, OSX and
+      BSD family operating systems.
+    digest: 0c24ca4e39051b8d707b9fbca66aaf7bb6a690e0613b9790367e8c0e505d6f0e
+    home: https://fluentbit.io/
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/fluentd/fluentbit/icon/fluentbit-icon-color.svg
+    keywords:
+    - logging
+    - fluent-bit
+    - fluentd
+    maintainers:
+    - email: eduardo@calyptia.com
+      name: edsiper
+    - email: naseem@transit.app
+      name: naseemkullah
+    - email: towmeykaw@gmail.com
+      name: Towmeykaw
+    - email: steve.hipwell@gmail.com
+      name: stevehipwell
+    name: fluent-bit
+    sources:
+    - https://github.com/fluent/fluent-bit/
+    urls:
+    - fluent-bit-0.48.3.tgz
+    version: 0.48.3
   grafana:
   - annotations:
       artifacthub.io/license: Apache-2.0
@@ -9,8 +41,47 @@ entries:
         - name: Upstream Project
           url: https://github.com/grafana/grafana
     apiVersion: v2
+    appVersion: 11.4.0
+    created: "2024-12-28T08:24:51.5091371+09:00"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: e2fe430661e3b9a5d764a2c6e4734b8ddbc09a85b67d6cb1f26a7bd3c36fb4b6
+    home: https://grafana.com
+    icon: https://artifacthub.io/image/b4fed1a7-6c8f-4945-b99d-096efa3e4116
+    keywords:
+    - monitoring
+    - metric
+    kubeVersion: ^1.8.0-0
+    maintainers:
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: rluckie@cisco.com
+      name: rtluckie
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: mail@torstenwalter.de
+      name: torstenwalter
+    - email: github@jkroepke.de
+      name: jkroepke
+    name: grafana
+    sources:
+    - https://github.com/grafana/grafana
+    - https://github.com/grafana/helm-charts
+    type: application
+    urls:
+    - grafana-8.8.2.tgz
+    version: 8.8.2
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/grafana/helm-charts
+        - name: Upstream Project
+          url: https://github.com/grafana/grafana
+    apiVersion: v2
     appVersion: 11.1.0
-    created: "2024-12-23T15:55:21.4314869+09:00"
+    created: "2024-12-28T08:24:51.507453+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -62,7 +133,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2024-12-23T15:55:21.4401764+09:00"
+    created: "2024-12-28T08:24:51.5128522+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -105,7 +176,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v0.77.2
-    created: "2024-12-23T15:55:21.469112+09:00"
+    created: "2024-12-28T08:24:51.5318494+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -167,7 +238,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2024-12-23T15:55:21.482893+09:00"
+    created: "2024-12-28T08:24:51.5328084+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -189,7 +260,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2024-12-23T15:55:21.4875019+09:00"
+    created: "2024-12-28T08:24:51.5337844+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -216,7 +287,7 @@ entries:
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
     appVersion: v3.0.1
-    created: "2024-12-23T15:55:21.4928568+09:00"
+    created: "2024-12-28T08:24:51.5377827+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
@@ -235,7 +306,7 @@ entries:
       repository: https://prometheus-community.github.io/helm-charts
       version: 2.15.*
     description: Prometheus is a monitoring system and time series database.
-    digest: 2b97bcf937f37ad65700d42fb460a0fb00cdef25bfd9b0d3195ee9c4678cbd83
+    digest: 7f59322e3dec2a84347e538caeab970d0d262a81e57642d9719f5f7f02168482
     home: https://prometheus.io/
     icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
     keywords:
@@ -264,4 +335,30 @@ entries:
     urls:
     - prometheus-26.0.1.tgz
     version: 26.0.1
-generated: "2024-12-23T15:55:21.4163912+09:00"
+  tempo:
+  - apiVersion: v2
+    appVersion: 2.5.0
+    created: "2024-12-28T08:24:51.5388051+09:00"
+    description: Grafana Tempo Single Binary Mode
+    digest: a736d4b119c1759831d5b4e99437cf4520e9f0aa07a7ba6746771e044580755b
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/tempo/master/docs/tempo/website/logo_and_name.png
+    maintainers:
+    - email: number101010@gmail.com
+      name: joe-elliott
+    - email: 9215868@gmail.com
+      name: swartz-k
+    - name: annanay25
+    - name: mdisibio
+    - name: dgzlopes
+    - name: mapno
+    - email: sheikhabubaker761@gmail.com
+      name: Sheikh-Abubaker
+    name: tempo
+    sources:
+    - https://github.com/grafana/tempo
+    type: application
+    urls:
+    - tempo-1.10.3.tgz
+    version: 1.10.3
+generated: "2024-12-28T08:24:51.504606+09:00"
