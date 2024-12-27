@@ -1,0 +1,32 @@
+{{- if not .Values.existingConfigMap -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "fluent-bit.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "fluent-bit.labels" . | nindent 4 }}
+data:
+  custom_parsers.conf: |
+    {{- (tpl .Values.config.customParsers $) | nindent 4 }}
+  fluent-bit.conf: |
+    {{- (tpl .Values.config.service $)  | nindent 4 }}
+    {{- (tpl .Values.config.inputs $)  | nindent 4 }}
+    {{- (tpl .Values.config.filters $)  | nindent 4 }}
+    [OUTPUT]
+        Name loki
+        Match *
+        Host {{ .Values.loki.host }}
+        Port 80
+        Auto_kubernetes_labels on
+        Labels cluster=Book_k8sinfra,region=KR,namespace=$kubernetes['namespace_name']
+        Structured_metadata pod=$kubernetes['pod_name']
+  {{- range $key, $val := .Values.config.upstream }}
+  {{ $key }}: |
+    {{- (tpl $val $) | nindent 4 }}
+  {{- end }}
+  {{- range $key, $val := .Values.config.extraFiles }}
+  {{ $key }}: |
+    {{- (tpl $val $) | nindent 4 }}
+  {{- end }}
+{{- end -}}
