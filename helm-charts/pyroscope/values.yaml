@@ -7,7 +7,7 @@ pyroscope:
   replicaCount: 1
 
   # -- Kubernetes cluster domain suffix for DNS discovery
-  cluster_domain: .cluster.local.
+  cluster_domain: .cluster.local
 
   image:
     repository: grafana/pyroscope
