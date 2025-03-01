@@ -7,7 +7,7 @@ entries:
           description: "Updated Fluent Bit OCI image to v3.2.2."
     apiVersion: v1
     appVersion: 3.2.2
-    created: "2025-03-01T15:22:06.2116554+09:00"
+    created: "2025-03-01T15:29:43.6617374+09:00"
     description: Fast and lightweight log processor and forwarder or Linux, OSX and
       BSD family operating systems.
     digest: 0c24ca4e39051b8d707b9fbca66aaf7bb6a690e0613b9790367e8c0e505d6f0e
@@ -42,7 +42,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.4.0
-    created: "2025-03-01T15:22:06.2529944+09:00"
+    created: "2025-03-01T15:29:43.7036435+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: e2fe430661e3b9a5d764a2c6e4734b8ddbc09a85b67d6cb1f26a7bd3c36fb4b6
     home: https://grafana.com
@@ -81,7 +81,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.1.0
-    created: "2025-03-01T15:22:06.2292926+09:00"
+    created: "2025-03-01T15:29:43.6827562+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -111,6 +111,56 @@ entries:
     urls:
     - grafana-8.3.2.tgz
     version: 8.3.2
+  jaeger:
+  - apiVersion: v2
+    appVersion: 1.53.0
+    created: "2025-03-01T15:29:43.7169307+09:00"
+    dependencies:
+    - condition: provisionDataStore.cassandra
+      name: cassandra
+      repository: https://charts.helm.sh/incubator
+      version: 0.15.3
+    - condition: provisionDataStore.elasticsearch
+      name: elasticsearch
+      repository: https://charts.bitnami.com/bitnami
+      version: 20.0.4
+    - condition: provisionDataStore.kafka
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 26.6.2
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: A Jaeger Helm chart for Kubernetes
+    digest: cbb9237eab460c907f1909f94755485bff06b91967cceef2844204f1d0614c9d
+    home: https://jaegertracing.io
+    icon: https://www.jaegertracing.io/img/jaeger-icon-reverse-color.svg
+    keywords:
+    - jaeger
+    - opentracing
+    - tracing
+    - instrumentation
+    kubeVersion: '>= 1.21-0'
+    maintainers:
+    - email: david.vonthenen@dell.com
+      name: dvonthenen
+    - email: ankit.mehta@appian.com
+      name: mehta-ankit
+    - email: michael.lorant@fairfaxmedia.com.au
+      name: mikelorant
+    - email: naseem@transit.app
+      name: naseemkullah
+    - email: me@pavelnikolov.net
+      name: pavelnikolov
+    - email: jkowall@kowall.net
+      name: jkowall
+    name: jaeger
+    sources:
+    - https://hub.docker.com/u/jaegertracing/
+    type: application
+    urls:
+    - jaeger-3.4.0.tgz
+    version: 3.4.0
   jenkins:
   - annotations:
       artifacthub.io/category: integration-delivery
@@ -133,7 +183,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2025-03-01T15:22:06.2809307+09:00"
+    created: "2025-03-01T15:29:43.7407067+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -176,7 +226,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v0.77.2
-    created: "2025-03-01T15:22:06.3197512+09:00"
+    created: "2025-03-01T15:29:43.7813633+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -238,7 +288,7 @@ entries:
   loki:
   - apiVersion: v2
     appVersion: 3.3.2
-    created: "2025-03-01T15:22:06.3507851+09:00"
+    created: "2025-03-01T15:29:43.8089676+09:00"
     dependencies:
     - alias: minio
       condition: minio.enabled
@@ -275,7 +325,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2025-03-01T15:22:06.370666+09:00"
+    created: "2025-03-01T15:29:43.8259184+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -297,7 +347,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2025-03-01T15:22:06.3872164+09:00"
+    created: "2025-03-01T15:29:43.8278853+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -317,9 +367,9 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.120.0
-    created: "2025-03-01T15:22:06.3890512+09:00"
+    created: "2025-03-01T15:29:43.8291271+09:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
-    digest: 6b75a40dca45e1e26bf8bf52ba3b655679a1cb6549243ff96f1446bdae903777
+    digest: b48f3784711a7a78a25498434e69e910ae6adb279e84e60a05f93fc2e9cf16d3
     home: https://opentelemetry.io/
     icon: https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png
     maintainers:
@@ -344,7 +394,7 @@ entries:
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
     appVersion: v3.0.1
-    created: "2025-03-01T15:22:06.411271+09:00"
+    created: "2025-03-01T15:29:43.8508121+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
@@ -395,7 +445,7 @@ entries:
   pyroscope:
   - apiVersion: v2
     appVersion: 1.10.0
-    created: "2025-03-01T15:22:06.4343596+09:00"
+    created: "2025-03-01T15:29:43.8692719+09:00"
     dependencies:
     - alias: agent
       condition: agent.enabled
@@ -427,7 +477,7 @@ entries:
   tempo:
   - apiVersion: v2
     appVersion: 2.5.0
-    created: "2025-03-01T15:22:06.4528625+09:00"
+    created: "2025-03-01T15:29:43.8887767+09:00"
     description: Grafana Tempo Single Binary Mode
     digest: a736d4b119c1759831d5b4e99437cf4520e9f0aa07a7ba6746771e044580755b
     home: https://grafana.net
@@ -450,4 +500,4 @@ entries:
     urls:
     - tempo-1.10.3.tgz
     version: 1.10.3
-generated: "2025-03-01T15:22:06.1891553+09:00"
+generated: "2025-03-01T15:29:43.6397326+09:00"
