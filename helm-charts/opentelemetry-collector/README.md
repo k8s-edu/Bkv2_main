@@ -3,7 +3,7 @@
 The helm chart installs [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector)
 in kubernetes cluster.
 
-_This is a Helm chart, modified for educational purposes_ from [pyroscope](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
+_This is a Helm chart, modified for educational purposes_ from [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
 
 
 ## Prerequisites
