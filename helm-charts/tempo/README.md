@@ -79,7 +79,7 @@ Grafana Tempo Single Binary Mode
 | tempo.resources | object | `{}` |  |
 | tempo.retention | string | `"24h"` |  |
 | tempo.securityContext | object | `{}` |  |
-| tempo.server.http_listen_port | int | `3100` | HTTP server listen port |
+| tempo.server.http_listen_port | int | `3200` | HTTP server listen port |
 | tempo.storage.trace.backend | string | `"local"` |  |
 | tempo.storage.trace.local.path | string | `"/var/tempo/traces"` |  |
 | tempo.storage.trace.wal.path | string | `"/var/tempo/wal"` |  |
