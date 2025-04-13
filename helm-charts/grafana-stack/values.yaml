@@ -3159,7 +3159,7 @@ loki:
         {{- tpl (. | toYaml) $ | nindent 4 }}
       {{- end }}
     # Should authentication be enabled
-    auth_enabled: true
+    auth_enabled: false
     # -- memberlist configuration (overrides embedded default)
     memberlistConfig: {}
     # -- Extra memberlist configuration
@@ -3185,7 +3185,7 @@ loki:
     # -- Check https://grafana.com/docs/loki/latest/configuration/#common_config for more info on how to provide a common configuration
     commonConfig:
       path_prefix: /var/loki
-      replication_factor: 3
+      replication_factor: 1
       compactor_address: '{{ include "loki.compactorAddress" . }}'
     # -- Storage config. Providing this will automatically populate all necessary storage configs in the templated config.
     storage:
@@ -3195,7 +3195,7 @@ loki:
       #   chunks: FIXME
       #   ruler: FIXME
       #   admin: FIXME
-      type: s3
+      type: filesystem
       s3:
         s3: null
         endpoint: null
@@ -3263,7 +3263,15 @@ loki:
         timeout: "500ms"
         default_validity: "12h"
     # -- Check https://grafana.com/docs/loki/latest/configuration/#schema_config for more info on how to configure schemas
-    schemaConfig: {}
+    schemaConfig:
+      configs:
+        - from: 2024-01-01
+          store: tsdb
+          object_store: filesystem
+          schema: v13
+          index:
+            prefix: index_
+            period: 24h
     # -- a real Loki install requires a proper schemaConfig defined above this, however for testing or playing around
     # you can enable useTestSchema
     useTestSchema: false
@@ -3499,7 +3507,7 @@ loki:
 
   # -- Section for configuring optional Helm test
   test:
-    enabled: true
+    enabled: false
     # -- Used to directly query the metrics endpoint of the canary for testing, this approach avoids needing prometheus for testing.
     # This in a newer approach to using prometheusAddress such that tests do not have a dependency on prometheus
     canaryServiceAddress: "http://loki-canary:3500/metrics"
@@ -3527,7 +3535,7 @@ loki:
   # The Loki canary pushes logs to and queries from this loki installation to test
   # that it's working correctly
   lokiCanary:
-    enabled: true
+    enabled: false
     # -- If true, the canary will send directly to Loki via the address configured for verification --
     # -- If false, it will write to stdout and an Agent will be needed to scrape and send the logs --
     push: true
@@ -3940,7 +3948,7 @@ loki:
       # -- Which schema to be used when building URLs. Can be 'http' or 'https'.
       schema: http
       # -- Enable listener for IPv6, disable on IPv4-only systems
-      enableIPv6: true
+      enableIPv6: false
       # -- NGINX log format
       logFormat: |-
         main '$remote_addr - $remote_user [$time_local]  $status '
@@ -4131,7 +4139,7 @@ loki:
   # Configuration for the single binary node(s)
   singleBinary:
     # -- Number of replicas for the single binary
-    replicas: 0
+    replicas: 1
     autoscaling:
       # -- Enable autoscaling
       enabled: false
@@ -4228,7 +4236,7 @@ loki:
   # Configuration for the write pod(s)
   write:
     # -- Number of replicas for the write
-    replicas: 3
+    replicas: 0
     autoscaling:
       # -- Enable autoscaling for the write.
       enabled: false
@@ -4349,7 +4357,7 @@ loki:
   # --  Configuration for the read pod(s)
   read:
     # -- Number of replicas for the read
-    replicas: 3
+    replicas: 0
     autoscaling:
       # -- Enable autoscaling for the read, this is only used if `queryIndex.enabled: true`
       enabled: false
@@ -4458,7 +4466,7 @@ loki:
   # --  Configuration for the backend pod(s)
   backend:
     # -- Number of replicas for the backend
-    replicas: 3
+    replicas: 0
     autoscaling:
       # -- Enable autoscaling for the backend.
       enabled: false
@@ -5929,7 +5937,7 @@ loki:
     extraArgs: {}
   resultsCache:
     # -- Specifies whether memcached based results-cache should be enabled
-    enabled: true
+    enabled: false
     # -- Specify how long cached results should be stored in the results-cache before being expired
     defaultValidity: 12h
     # -- Memcached operation timeout
@@ -6027,7 +6035,7 @@ loki:
       mountPath: /data
   chunksCache:
     # -- Specifies whether memcached based chunks-cache should be enabled
-    enabled: true
+    enabled: false
     # -- Batchsize for sending and receiving chunks from chunks cache
     batchSize: 4
     # -- Parallel threads for sending and receiving chunks from chunks cache
@@ -6493,6 +6501,9 @@ fluent-bit:
   enabled: false
   # Default values for fluent-bit.
 
+  loki:
+    host: 'test'
+
   # kind -- DaemonSet or Deployment
   kind: DaemonSet
 
@@ -6508,7 +6519,7 @@ fluent-bit:
     pullPolicy: IfNotPresent
 
   testFramework:
-    enabled: true
+    enabled: false
     namespace:
     image:
       repository: busybox
@@ -7255,7 +7266,7 @@ tempo:
     runAsUser: 10001
     runAsGroup: 10001
     fsGroup: 10001
-    runAsNonRoot: true
+    runAsNonRoot: false
 
   serviceAccount:
     # -- Specifies whether a ServiceAccount should be created
@@ -7554,7 +7565,7 @@ pyroscope:
   # Configuration for `alloy` child chart
   # -------------------------------------
   alloy:
-    enabled: true
+    enabled: false
     controller:
       type: "statefulset"
       replicas: 1
