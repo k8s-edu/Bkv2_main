@@ -1,0 +1,21 @@
+dependencies:
+- name: prometheus
+  repository: https://k8s-edu.github.io/Bkv2_main/helm-charts/
+  version: 26.0.1
+- name: grafana
+  repository: https://k8s-edu.github.io/Bkv2_main/helm-charts/
+  version: 8.8.2
+- name: loki
+  repository: https://k8s-edu.github.io/Bkv2_main/helm-charts/
+  version: 6.24.0
+- name: fluent-bit
+  repository: https://k8s-edu.github.io/Bkv2_main/helm-charts/
+  version: 0.48.3
+- name: tempo
+  repository: https://k8s-edu.github.io/Bkv2_main/helm-charts/
+  version: 1.10.3
+- name: pyroscope
+  repository: https://k8s-edu.github.io/Bkv2_main/helm-charts/
+  version: 1.10.0
+digest: sha256:78dcf9039d8ec0b997f1c0b1ba67153bfa4a1ec24329b2aff843d132c859ad59
+generated: "2025-04-13T15:29:28.3860245+09:00"

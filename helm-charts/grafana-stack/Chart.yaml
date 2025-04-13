@@ -1,0 +1,32 @@
+apiVersion: v2
+name: grafana-stack
+description: A Helm chart for Kubernetes
+type: application
+version: 1.0.0
+appVersion: "1.16.0"
+
+dependencies:
+- name: prometheus
+  version: "26.0.1"
+  repository: "https://k8s-edu.github.io/Bkv2_main/helm-charts/"
+  condition: prometheus.enabled
+- name: grafana
+  version: "8.8.2"
+  repository: "https://k8s-edu.github.io/Bkv2_main/helm-charts/"
+  condition: grafana.enabled
+- name: loki
+  version: "6.24.0"
+  repository: "https://k8s-edu.github.io/Bkv2_main/helm-charts/"
+  condition: loki.enabled
+- name: fluent-bit
+  version: "0.48.3"
+  repository: "https://k8s-edu.github.io/Bkv2_main/helm-charts/"
+  condition: fluent-bit.enabled
+- name: tempo
+  version: "1.10.3"
+  repository: "https://k8s-edu.github.io/Bkv2_main/helm-charts/"
+  condition: tempo.enabled
+- name: pyroscope
+  version: "1.10.0"
+  repository: "https://k8s-edu.github.io/Bkv2_main/helm-charts/"
+  condition: pyroscope.enabled
