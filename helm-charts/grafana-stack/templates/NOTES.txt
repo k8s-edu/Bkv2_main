@@ -41,5 +41,5 @@ For that, you'll need to add the Pyroscope data source to your Grafana instance 
 See https://grafana.com/docs/grafana/latest/datasources/grafana-pyroscope/ for more details.
 
 The in-cluster query URL for the data source in Grafana is:
-http://grafana-stack-pyroscope.{{ .Release.Namespace }}.svc.cluster.local:4040
+http://grafana-stack-pyroscope.{{ .Release.Namespace }}.svc.cluster.local:4040/
 {{- end }}
