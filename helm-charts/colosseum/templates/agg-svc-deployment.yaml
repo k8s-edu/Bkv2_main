@@ -30,7 +30,7 @@ spec:
         env:
         {{- if or (eq .Values.monitoring.mode "trace") ( eq .Values.monitoring.mode "profile") }}
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
-          value: "http://tempo.monitoring.svc.cluster.local:4318"
+          value: {{ .Values.tempo.url }}
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: "service.name=agg-svc"
         - name: OTEL_EXPORTER_OTLP_INSECURE
@@ -44,7 +44,7 @@ spec:
         {{- end }}
         {{- if eq .Values.monitoring.mode "profile" }}
         - name: PYROSCOPE_SERVER_ADDRESS
-          value: "http://pyroscope.monitoring.svc.cluster.local:4040"
+          value: {{ .Values.pyroscope.url }}
         - name: PYROSCOPE_APPLICATION_NAME
           value: "agg-svc"
         {{- end }}

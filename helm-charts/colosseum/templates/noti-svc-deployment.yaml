@@ -29,4 +29,4 @@ spec:
         - name: REDIS_URL
           value: "redis://redis.{{- .Release.Namespace -}}.svc.cluster.local:6379"
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
