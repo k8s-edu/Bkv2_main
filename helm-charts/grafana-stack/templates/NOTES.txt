@@ -1,0 +1,45 @@
+{{- if .Values.loki.enabled }}
+Grafana Loki has been deployed as a single binary.
+This means a single pod is handling reads and writes. You can scale that pod vertically by adding more CPU and memory resources.
+See https://grafana.com/docs/grafana/latest/datasources/loki/ for more details.
+
+The in-cluster query URL for the data source in Grafana is:
+http://{{ .Release.Name }}-loki-gateway.{{ .Release.Namespace }}.svc.cluster.local/
+{{- end }}
+
+{{- if index .Values "fluent-bit" "enabled" }}
+Fluent Bit has been deployed to collect logs from your pods.
+
+You can check the status of Fluent Bit using:
+  kubectl get pods -l app.kubernetes.io/name=fluent-bit -n {{ .Release.Namespace }}
+
+By default, Fluent Bit is configured to:
+- Collect container logs from all namespaces
+- Parse logs in JSON format when possible
+- Forward logs to Loki
+
+For more information on configuring Fluent Bit, see:
+https://docs.fluentbit.io/manual/
+{{- end }}
+
+{{- if .Values.tempo.enabled }}
+Grafana Tempo has been deployed.
+
+You can use Grafana to explore traces data.
+For that, you'll need to add the Tempo data source to your Grafana instance and configure the query URL accordingly.
+See https://grafana.com/docs/grafana/latest/datasources/tempo/ for more details.
+
+The in-cluster query URL for the data source in Grafana is:
+http://{{ .Release.Name }}-tempo.{{ .Release.Namespace }}.svc.cluster.local:3200/
+{{- end }}
+
+{{- if .Values.pyroscope.enabled }}
+Grafana Pyroscope has been deployed.
+
+You can also use Grafana to explore Pyroscope data.
+For that, you'll need to add the Pyroscope data source to your Grafana instance and configure the query URL accordingly.
+See https://grafana.com/docs/grafana/latest/datasources/grafana-pyroscope/ for more details.
+
+The in-cluster query URL for the data source in Grafana is:
+http://grafana-stack-pyroscope.{{ .Release.Namespace }}.svc.cluster.local:4040
+{{- end }}
