@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: noti-svc
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: noti-svc
+  template:
+    metadata:
+      labels:
+        app: noti-svc
+    spec:
+      containers:
+      - name: noti-svc
+        image: seongjumoon/notice-service:log
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        env:
+        - name: PORT
+          value: "8081"
+        - name: REDIS_URL
+          value: "redis://redis.{{- .Release.Namespace -}}.svc.cluster.local:6379"
+        ports:
+        - containerPort: 8080

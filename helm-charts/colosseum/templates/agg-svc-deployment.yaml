@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agg-svc
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: agg-svc
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/actuator/prometheus"
+      labels:
+        app: agg-svc
+    spec:
+      containers:
+      - name: agg-svc
+        image: seongjumoon/aggregate-service:{{ .Values.monitoring.mode }}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        env:
+        {{- if or (eq .Values.monitoring.mode "trace") ( eq .Values.monitoring.mode "profile") }}
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://tempo.monitoring.svc.cluster.local:4318"
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: "service.name=agg-svc"
+        - name: OTEL_EXPORTER_OTLP_INSECURE
+          value: "true"
+        - name: OTEL_METRICS_EXPORTER
+          value: "none"
+        - name: OTEL_SDK_DISABLED
+          value: "false"
+        - name: OTEL_LOGS_EXPORTER
+          value: "none"
+        {{- end }}
+        {{- if eq .Values.monitoring.mode "profile" }}
+        - name: PYROSCOPE_SERVER_ADDRESS
+          value: "http://pyroscope.monitoring.svc.cluster.local:4040"
+        - name: PYROSCOPE_APPLICATION_NAME
+          value: "agg-svc"
+        {{- end }}
+        - name: SPRING_CONFIG_LOCATION
+          value: /config/application.yml
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config-volume
+          mountPath: /config
+          readOnly: true
+      volumes:
+      - name: config-volume
+        configMap:
+          name: agg-svc-config

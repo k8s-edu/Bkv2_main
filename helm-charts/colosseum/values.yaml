@@ -1,0 +1,9 @@
+monitoring:
+  mode: log # log,trace,profile
+  loki:
+    url: http://loki-gateway.monitoring.svc.cluster.local/
+  tempo:
+    url: http://tempo.monitoring.svc.cluster.local:3200
+  pyroscope:
+    url: http://pyroscope.monitoring.svc.cluster.local:4040
+  
