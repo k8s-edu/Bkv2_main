@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: noti-svc
+  name: promo-svc
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:
-      app: noti-svc
+      app: promo-svc
   template:
     metadata:
       labels:
-        app: noti-svc
+        app: promo-svc
     spec:
       containers:
-      - name: noti-svc
-        image: seongjumoon/notice-service:log
+      - name: promo-svc
+        image: seongjumoon/promotion-service:log
         imagePullPolicy: Always
         resources:
           requests:
@@ -25,8 +25,10 @@ spec:
             cpu: "128m"
         env:
         - name: PORT
-          value: "8081"
-        - name: REDIS_URL
-          value: "redis://redis.{{- .Release.Namespace -}}.svc.cluster.local:6379"
+          value: "8083"
+        - name: REDIS_HOST
+          value: redis.{{- .Release.Namespace -}}.svc.cluster.local
+        - name: REDIS_PORT
+          value: "6379"
         ports:
-        - containerPort: 8081
+        - containerPort: 8083

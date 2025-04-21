@@ -6,11 +6,15 @@ Your application logs will be collected and sent to Loki at:
 {{- end }}
 
 {{- if eq .Values.monitoring.mode "trace" }}
+Your application logs will be collected and sent to Loki at:
+  {{ .Values.monitoring.loki.url }}
 Your application trace data will be collected and sent to Tempo at:
   {{ .Values.monitoring.tempo.url }}
 {{- end }}
 
 {{- if eq .Values.monitoring.mode "profile" }}
+Your application logs will be collected and sent to Loki at:
+  {{ .Values.monitoring.loki.url }}
 Your application profile data will be collected and sent to Pyroscope at:
   {{ .Values.monitoring.pyroscope.url }}
 And your application trace data will be collected and sent to Tempo at:

@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: noti-svc
+  name: rwd-svc
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:
-      app: noti-svc
+      app: rwd-svc
   template:
     metadata:
       labels:
-        app: noti-svc
+        app: rwd-svc
     spec:
       containers:
-      - name: noti-svc
-        image: seongjumoon/notice-service:log
+      - name: rwd-svc
+        image: seongjumoon/reward-service:log
         imagePullPolicy: Always
         resources:
           requests:
@@ -29,4 +29,4 @@ spec:
         - name: REDIS_URL
           value: "redis://redis.{{- .Release.Namespace -}}.svc.cluster.local:6379"
         ports:
-        - containerPort: 8081
+        - containerPort: 8084

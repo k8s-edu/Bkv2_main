@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: agg-svc
+  name: rwd-svc
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: agg-svc
+    app: rwd-svc
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 8084

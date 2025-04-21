@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-load-generator-config
+  namespace: {{ .Release.Namespace }}
+
+data:
+  service-discovery.json : |
+    {
+        "probe": {
+            "agg-svc": {
+                "operation": {
+                    "write_score": {
+                        "endpoint": "http://${AGG_SVC_SERVICE_HOST}:${AGG_SVC_SERVICE_PORT}/api/v1/score/${USER_ID}",
+                        "method": "POST",
+                        "body": "{\"score\": 5}"
+                    }
+                }
+            },
+            "rwd-svc": {
+                "operation": {
+                    "read_winner": {
+                        "endpoint": "http://${RWD_SVC_SERVICE_HOST}:${RWD_SVC_SERVICE_PORT}/api/v1/check-winner/${USER_ID}",
+                        "method": "GET"
+                    }
+                }
+            },
+            "noti-svc": {
+                "operation": {
+                    "read_notice_cursor": {
+                        "endpoint": "http://${NOTI_SVC_SERVICE_HOST}:${NOTI_SVC_SERVICE_PORT}/api/v1/cursor",
+                        "method": "GET"
+                    }
+                }
+            },
+            "promo-svc": {
+                "operation": {
+                    "read_promotion_targets": {
+                        "endpoint": "http://${PROMO_SVC_SERVICE_HOST}:${PROMO_SVC_SERVICE_PORT}/api/v1/promotion/target/${USER_ID}",
+                        "method": "GET"
+                    }
+                }
+            },
+            "cms-svc": {
+                "operation": {
+                    "read_partiapcnt": {
+                        "endpoint": "http://${CMS_SVC_SERVICE_HOST}:${CMS_SVC_SERVICE_PORT}/api/v1/participate/user",
+                        "method": "GET"
+                    }
+                }
+            }
+        }
+    }
+  load-generate.sh: |
+    #!/usr/bin/env bash
+
+    IFS=$'\n\t'
+    USER_ID=$(shuf -i 1-2000 -n 1)
+    DISCOVERY_PATH="/etc/discovery/discovery.json"
+
+    resolve_template() {
+      local template="$1"
+      eval "echo \"$template\""
+    }
+
+    # === Main loop ===
+    SERVICES=$(jq -r '.probe | keys[]' "$DISCOVERY_PATH")
+
+    for svc in $SERVICES; do
+      OPERATIONS=$(jq -r ".probe[\"$svc\"].operation | keys[]" "$DISCOVERY_PATH")
+      for op in $OPERATIONS; do
+        endpoint_template=$(jq -r ".probe[\"$svc\"].operation[\"$op\"].endpoint" "$DISCOVERY_PATH")
+        method=$(jq -r ".probe[\"$svc\"].operation[\"$op\"].method" "$DISCOVERY_PATH")
+        body_template=$(jq -r ".probe[\"$svc\"].operation[\"$op\"].body // empty" "$DISCOVERY_PATH")
+
+        final_url=$(resolve_template "$endpoint_template")
+        echo "📡 [${svc}] Operation: ${op} → ${method} ${final_url}"
+
+        if [[ "$method" == "POST" ]]; then
+          if [[ -z "$body_template" ]]; then
+            echo "POST 요청이지만 body가 없습니다. 무시합니다."
+            continue
+          fi
+          response=$(curl -sS -X POST "$final_url" \
+            -H 'Content-Type: application/json' \
+            -d "$body_template" || true)
+        else
+          response=$(curl -sS -X "$method" "$final_url" || true)
+        fi
+
+        if [[ -z "$response" ]]; then
+          echo "❌ ${svc}/${op} 응답이 비어 있음"
+        else
+          echo "✅ ${svc}/${op} 응답 수신 완료"
+          echo "$response"
+        fi
+        echo ""
+      done
+    done
