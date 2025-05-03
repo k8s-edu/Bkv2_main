@@ -5,8 +5,8 @@
 _This is a Helm chart, modified for educational purposes_ from [fluent-bit](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit), [loki](https://github.com/grafana/loki/tree/main/production/helm/loki), [tempo](https://github.com/grafana/helm-charts/tree/main/charts/tempo) [pyroscope](https://github.com/grafana/pyroscope/tree/main/operations/pyroscope/helm/pyroscope)
 
 
-## Change values between origin chart
-| Chart | Field Path | Before Value | After Value | Description |
+## Changed values between origin chart
+| Chart | Field Path | Origin Value | Chanaged Value | Description |
 | --- | --- | --- | --- | --- |
 | loki | `loki.auth_enabled` | `true` | `false` | Simplify the experimental configuration by not performing additional user authentication. |
 | loki | `loki.commonConfig.replication_factor` | `3` | `1` | Since the experimental configuration uses a single configuration mode, the log replica is set to 1. |
