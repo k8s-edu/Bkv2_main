@@ -80,16 +80,16 @@ data:
         final_url=$(resolve_template "$endpoint_template")
         echo "📡 [${svc}] Operation: ${op} → ${method} ${final_url}"
 
-        if [[ "$method" == "POST" ]]; then
+        if [[ "$method" != "GET" ]]; then
           if [[ -z "$body_template" ]]; then
-            echo "POST 요청이지만 body가 없습니다. 무시합니다."
+            echo "Body가 필요한 요청이지만 body가 없습니다. 무시합니다."
             continue
           fi
-          response=$(curl -sS -X POST "$final_url" \
+          response=$(curl -sS -X "$method" "$final_url" \
             -H 'Content-Type: application/json' \
             -d "$body_template" || true)
         else
-          response=$(curl -sS -X "$method" "$final_url" || true)
+          response=$(curl -sS -X "GET" "$final_url" || true)
         fi
 
         if [[ -z "$response" ]]; then
