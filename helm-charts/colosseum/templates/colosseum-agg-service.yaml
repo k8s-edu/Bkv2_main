@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cms-svc
+  name: colosseum-agg
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: cms-svc
+    app: colosseum-agg
   ports:
   - port: 80
-    targetPort: 8082
+    targetPort: 8080

@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-load-generator-config
   namespace: {{ .Release.Namespace }}
-
 data:
   service-discovery.json : |
     {
@@ -11,7 +10,7 @@ data:
             "agg-svc": {
                 "operation": {
                     "write_score": {
-                        "endpoint": "http://${AGG_SVC_SERVICE_HOST}:${AGG_SVC_SERVICE_PORT}/api/v1/score/${USER_ID}",
+                        "endpoint": "http://${COLOSSEUM_AGG_SERVICE_HOST}:${COLOSSEUM_AGG_SERVICE_PORT}/api/v1/score/${USER_ID}",
                         "method": "POST",
                         "body": "{\"score\": 5}"
                     }
@@ -20,7 +19,7 @@ data:
             "rwd-svc": {
                 "operation": {
                     "read_winner": {
-                        "endpoint": "http://${RWD_SVC_SERVICE_HOST}:${RWD_SVC_SERVICE_PORT}/api/v1/check-winner/${USER_ID}",
+                        "endpoint": "http://${COLOSSEUM_RWD_SERVICE_HOST}:${COLOSSEUM_RWD_SERVICE_PORT}/api/v1/check-winner/${USER_ID}",
                         "method": "GET"
                     }
                 }
@@ -28,7 +27,7 @@ data:
             "noti-svc": {
                 "operation": {
                     "read_notice_cursor": {
-                        "endpoint": "http://${NOTI_SVC_SERVICE_HOST}:${NOTI_SVC_SERVICE_PORT}/api/v1/cursor",
+                        "endpoint": "http://${COLOSSEUM_NTI_SERVICE_HOST}:${COLOSSEUM_NTI_SERVICE_PORT}/api/v1/cursor",
                         "method": "GET"
                     }
                 }
@@ -36,7 +35,7 @@ data:
             "promo-svc": {
                 "operation": {
                     "read_promotion_targets": {
-                        "endpoint": "http://${PROMO_SVC_SERVICE_HOST}:${PROMO_SVC_SERVICE_PORT}/api/v1/promotion/target/${USER_ID}",
+                        "endpoint": "http://${COLOSSEUM_PRM_SERVICE_HOST}:${COLOSSEUM_PRM_SERVICE_PORT}/api/v1/promotion/target/${USER_ID}",
                         "method": "GET"
                     }
                 }
@@ -44,7 +43,7 @@ data:
             "cms-svc": {
                 "operation": {
                     "read_partiapcnt": {
-                        "endpoint": "http://${CMS_SVC_SERVICE_HOST}:${CMS_SVC_SERVICE_PORT}/api/v1/participate/user",
+                        "endpoint": "http://${COLOSSEUM_CMS_SERVICE_HOST}:${COLOSSEUM_CMS_SERVICE_PORT}/api/v1/participate/user",
                         "method": "GET"
                     }
                 }

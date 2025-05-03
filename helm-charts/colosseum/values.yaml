@@ -1,3 +1,8 @@
+
+global:
+  image:
+    registry: seongjumoon
+
 monitoring:
   mode: log # log,trace,profile
   loki:

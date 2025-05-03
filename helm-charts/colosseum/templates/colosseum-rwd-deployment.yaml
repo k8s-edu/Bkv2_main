@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cms-svc
+  name: colosseum-rwd
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:
-      app: cms-svc
+      app: colosseum-rwd
   template:
     metadata:
       labels:
-        app: cms-svc
+        app: colosseum-rwd
     spec:
       containers:
-      - name: cms-svc
-        image: seongjumoon/cms-service:log
+      - name: colosseum-rwd
+        image: {{ .Values.global.image.registry }}/colosseum-rwd:log
         imagePullPolicy: Always
         resources:
           requests:
@@ -25,10 +25,8 @@ spec:
             cpu: "128m"
         env:
         - name: PORT
-          value: "8082"
-        - name: REDIS_HOST
-          value: redis.{{- .Release.Namespace -}}.svc.cluster.local
-        - name: REDIS_PORT
-          value: "6379"
+          value: "8081"
+        - name: REDIS_URL
+          value: "redis://redis.{{- .Release.Namespace -}}.svc.cluster.local:6379"
         ports:
-        - containerPort: 8082
+        - containerPort: 8084

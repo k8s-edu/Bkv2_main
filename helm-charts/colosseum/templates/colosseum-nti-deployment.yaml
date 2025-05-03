@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: promo-svc
+  name: colosseum-nti
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:
-      app: promo-svc
+      app: colosseum-nti
   template:
     metadata:
       labels:
-        app: promo-svc
+        app: colosseum-nti
     spec:
       containers:
-      - name: promo-svc
-        image: seongjumoon/promotion-service:log
+      - name: colosseum-nti
+        image: {{ .Values.global.image.registry }}/colosseum-nti:log
         imagePullPolicy: Always
         resources:
           requests:
@@ -25,10 +25,8 @@ spec:
             cpu: "128m"
         env:
         - name: PORT
-          value: "8083"
-        - name: REDIS_HOST
-          value: redis.{{- .Release.Namespace -}}.svc.cluster.local
-        - name: REDIS_PORT
-          value: "6379"
+          value: "8081"
+        - name: REDIS_URL
+          value: "redis://redis.{{- .Release.Namespace -}}.svc.cluster.local:6379"
         ports:
-        - containerPort: 8083
+        - containerPort: 8081

@@ -13,7 +13,7 @@ spec:
           restartPolicy: OnFailure
           containers:
           - name: load-generator
-            image: seongjumoon/curlimages-jq:8.13.0
+            image: {{ .Values.global.image.registry }}/curlimages-jq:8.13.0
             command: ["/bin/bash"]
             args: ["/scripts/load-generate.sh"]
             volumeMounts:
