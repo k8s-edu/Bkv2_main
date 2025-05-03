@@ -13,6 +13,11 @@ data:
                         "endpoint": "http://${COLOSSEUM_AGG_SERVICE_HOST}:${COLOSSEUM_AGG_SERVICE_PORT}/api/v1/score/${USER_ID}",
                         "method": "POST",
                         "body": "{\"score\": 5}"
+                    },
+                    "update_score": {
+                        "endpoint": "http://${COLOSSEUM_AGG_SERVICE_HOST}:${COLOSSEUM_AGG_SERVICE_PORT}/api/v1/score/${USER_ID}",
+                        "method": "PUT",
+                        "body": "{\"score\": 5}"
                     }
                 }
             },
