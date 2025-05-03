@@ -5,13 +5,13 @@
 _This is a Helm chart, modified for educational purposes_ from [fluent-bit](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit), [loki](https://github.com/grafana/loki/tree/main/production/helm/loki), [tempo](https://github.com/grafana/helm-charts/tree/main/charts/tempo) [pyroscope](https://github.com/grafana/pyroscope/tree/main/operations/pyroscope/helm/pyroscope)
 
 
-## Changed values between origin chart
+## Changed values from origin chart
 | Chart | Field Path | Origin Value | Chanaged Value | Description |
 | --- | --- | --- | --- | --- |
 | loki | `loki.auth_enabled` | `true` | `false` | Simplify the experimental configuration by not performing additional user authentication. |
 | loki | `loki.commonConfig.replication_factor` | `3` | `1` | Since the experimental configuration uses a single configuration mode, the log replica is set to 1. |
 | loki | `loki.storage.type` | `s3` | `filesystem` | Since cloud storage cannot be used, it is set to use the local file system (disk). |
-| loki | `loki.schemaConfig` | `{}` | Defined schema (details in diff) |  |
+| loki | `loki.schemaConfig` | `{}` | `{"configs":[{"from":"2024-01-01T00:00:00Z","store":"tsdb","object_store":"filesystem","schema":"v13","index":{"prefix":"index_","period":"24h"}}]}` | Loki storage setting  |
 | loki | `loki.test.enabled` | `true` | `false` | To proceed with the configuration without using additional resources, the test process is not performed. |
 | loki | `loki.lokiCanary.enabled` | `true` | `false` | To proceed with the configuration without using additional resources, the canary test is not performed. |
 | loki | `loki.listener.enableIPv6` | `true` | `false` | Since IPv6 is not provided in the experimental environment, this option is not used. |
