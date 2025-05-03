@@ -1,7 +1,7 @@
 Current Application Mode: {{ .Values.monitoring.mode }}
 
 You can check the status of colosseum using:
-  kubectl get pods -n {{ .Release.Namespace }}
+  kubectl -n {{ .Release.Namespace }} get pods
 
 {{- if eq .Values.monitoring.mode "log" }}
 Your application logs will be collected and sent to Loki at:
