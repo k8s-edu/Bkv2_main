@@ -7,7 +7,7 @@ data:
   service-discovery.json : |
     {
         "probe": {
-            "agg-svc": {
+            "colosseum-agg": {
                 "operation": {
                     "write_score": {
                         "endpoint": "http://${COLOSSEUM_AGG_SERVICE_HOST}:${COLOSSEUM_AGG_SERVICE_PORT}/api/v1/score/${USER_ID}",
@@ -16,7 +16,7 @@ data:
                     }
                 }
             },
-            "rwd-svc": {
+            "colosseum-rwd": {
                 "operation": {
                     "read_winner": {
                         "endpoint": "http://${COLOSSEUM_RWD_SERVICE_HOST}:${COLOSSEUM_RWD_SERVICE_PORT}/api/v1/check-winner/${USER_ID}",
@@ -24,7 +24,7 @@ data:
                     }
                 }
             },
-            "noti-svc": {
+            "colosseum-nti": {
                 "operation": {
                     "read_notice_cursor": {
                         "endpoint": "http://${COLOSSEUM_NTI_SERVICE_HOST}:${COLOSSEUM_NTI_SERVICE_PORT}/api/v1/cursor",
@@ -32,7 +32,7 @@ data:
                     }
                 }
             },
-            "promo-svc": {
+            "colosseum-prm": {
                 "operation": {
                     "read_promotion_targets": {
                         "endpoint": "http://${COLOSSEUM_PRM_SERVICE_HOST}:${COLOSSEUM_PRM_SERVICE_PORT}/api/v1/promotion/target/${USER_ID}",
@@ -40,7 +40,7 @@ data:
                     }
                 }
             },
-            "cms-svc": {
+            "colosseum-cms": {
                 "operation": {
                     "read_partiapcnt": {
                         "endpoint": "http://${COLOSSEUM_CMS_SERVICE_HOST}:${COLOSSEUM_CMS_SERVICE_PORT}/api/v1/participate/user",
