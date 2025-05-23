@@ -1,7 +1,7 @@
 Current Application Mode: {{ .Values.monitoring.mode }}
 
 You can check the status of colosseum using:
-  kubectl get pods -n {{ .Release.Namespace }} 
+  kubectl get pods -n {{ .Release.Namespace }}
 
 {{- if eq .Values.monitoring.mode "log" }}
 Your application logs will be collected and sent to Loki at:
@@ -12,14 +12,16 @@ Your application logs will be collected and sent to Loki at:
 Your application logs will be collected and sent to Loki at:
   {{ .Values.monitoring.loki.url }}
 Your application trace data will be collected and sent to Tempo at:
-  {{ .Values.monitoring.tempo.url }}
+  {{ .Values.monitoring.tempo.ingest_url }}
+  ⓘ Use this URL for adding tempo: {{ .Values.monitoring.tempo.search_url }}
 {{- end }}
 
 {{- if eq .Values.monitoring.mode "profile" }}
 Your application logs will be collected and sent to Loki at:
   {{ .Values.monitoring.loki.url }}
 Your application trace data will be collected and sent to Tempo at:
-  {{ .Values.monitoring.tempo.url }}
+  {{ .Values.monitoring.tempo.ingest_url }}
+  ⓘ Use this URL for adding tempo: {{ .Values.monitoring.tempo.search_url }}
 Your application profile data will be collected and sent to Pyroscope at:
   {{ .Values.monitoring.pyroscope.url }}
 {{- end }}
