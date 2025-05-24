@@ -30,7 +30,7 @@ spec:
         env:
         {{- if or (eq .Values.monitoring.mode "trace") ( eq .Values.monitoring.mode "profile") }}
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
-          value: {{ .Values.monitoring.tempo.url }}
+          value: {{ .Values.monitoring.tempo.ingest_url }}
         - name: OTEL_RESOURCE_ATTRIBUTES
           value: "service.name=colosseum-agg"
         - name: OTEL_EXPORTER_OTLP_INSECURE
