@@ -99,5 +99,6 @@ data:
           echo "$response"
         fi
         echo ""
+        sleep 1
       done
     done
