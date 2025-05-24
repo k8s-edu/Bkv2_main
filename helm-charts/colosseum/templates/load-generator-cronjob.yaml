@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ .Release.Name }}-load-generator
+  name: load-generator
   namespace: {{ .Release.Namespace }}
 spec:
   successfulJobsHistoryLimit: 1
@@ -24,7 +24,7 @@ spec:
           volumes:
           - name: config-volume
             configMap:
-              name: {{ .Release.Name }}-load-generator-config
+              name: load-generator-config
               items:
               - key: service-discovery.json
                 path: discovery.json

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-load-generator-config
+  name: load-generator-config
   namespace: {{ .Release.Namespace }}
 data:
   service-discovery.json : |
