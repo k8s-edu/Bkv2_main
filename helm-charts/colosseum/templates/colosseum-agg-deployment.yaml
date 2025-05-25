@@ -7,6 +7,8 @@ spec:
   selector:
     matchLabels:
       app: colosseum-agg
+  strategy:
+    type: Recreate # avoid resource exhaustion
   template:
     metadata:
       annotations:
@@ -56,6 +58,14 @@ spec:
         - name: config-volume
           mountPath: /config
           readOnly: true
+        startupProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - echo "waiting for redis manually" 
+          initialDelaySeconds: 30
+          periodSeconds: 30
       volumes:
       - name: config-volume
         configMap:

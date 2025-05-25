@@ -32,3 +32,13 @@ spec:
           value: "6379"
         ports:
         - containerPort: 8083
+        startupProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - echo "waiting for redis manually" 
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 10
+    
