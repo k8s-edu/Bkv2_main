@@ -1,7 +1,2 @@
-global:
-  redis:
-    version: 7.0.4
-    image:
-      repository: redis
-      tag: 7.0.4
-      pullPolicy: IfNotPresent
+redis:
+  version: 7.0.4
