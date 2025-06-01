@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: load-generator-config
+  namespace: {{ .Release.Namespace }}
+data:
+  service-discovery.json : |
+    {
+        "probe": {
+            "colosseum-agg": {
+                "operation": {
+                    "write_score": {
+                        "endpoint": "http://${COLOSSEUM_AGG_SERVICE_HOST}:${COLOSSEUM_AGG_SERVICE_PORT}/api/v1/score/${USER_ID}",
+                        "method": "POST",
+                        "body": "{\"score\": 5}"
+                    },
+                    "update_score": {
+                        "endpoint": "http://${COLOSSEUM_AGG_SERVICE_HOST}:${COLOSSEUM_AGG_SERVICE_PORT}/api/v1/score/${USER_ID}",
+                        "method": "PUT",
+                        "body": "{\"score\": 5}"
+                    }
+                }
+            },
+            "colosseum-rwd": {
+                "operation": {
+                    "read_winner": {
+                        "endpoint": "http://${COLOSSEUM_RWD_SERVICE_HOST}:${COLOSSEUM_RWD_SERVICE_PORT}/api/v1/check-winner/${USER_ID}",
+                        "method": "GET"
+                    }
+                }
+            },
+            "colosseum-nti": {
+                "operation": {
+                    "read_notice_cursor": {
+                        "endpoint": "http://${COLOSSEUM_NTI_SERVICE_HOST}:${COLOSSEUM_NTI_SERVICE_PORT}/api/v1/cursor",
+                        "method": "GET"
+                    }
+                }
+            },
+            "colosseum-prm": {
+                "operation": {
+                    "read_promotion_targets": {
+                        "endpoint": "http://${COLOSSEUM_PRM_SERVICE_HOST}:${COLOSSEUM_PRM_SERVICE_PORT}/api/v1/promotion/target/${USER_ID}",
+                        "method": "GET"
+                    }
+                }
+            },
+            "colosseum-cms": {
+                "operation": {
+                    "read_partiapcnt": {
+                        "endpoint": "http://${COLOSSEUM_CMS_SERVICE_HOST}:${COLOSSEUM_CMS_SERVICE_PORT}/api/v1/participate/user",
+                        "method": "GET"
+                    }
+                }
+            }
+        }
+    }
+  load-generate.sh: |
+    #!/usr/bin/env bash
+
+    IFS=$'\n\t'
+    USER_ID=$(shuf -i 1-2000 -n 1)
+    DISCOVERY_PATH="/etc/discovery/discovery.json"
+
+    resolve_template() {
+      local template="$1"
+      eval "echo \"$template\""
+    }
+
+    # === Main loop ===
+    SERVICES=$(jq -r '.probe | keys[]' "$DISCOVERY_PATH")
+
+    for svc in $SERVICES; do
+      OPERATIONS=$(jq -r ".probe[\"$svc\"].operation | keys[]" "$DISCOVERY_PATH")
+      for op in $OPERATIONS; do
+        endpoint_template=$(jq -r ".probe[\"$svc\"].operation[\"$op\"].endpoint" "$DISCOVERY_PATH")
+        method=$(jq -r ".probe[\"$svc\"].operation[\"$op\"].method" "$DISCOVERY_PATH")
+        body_template=$(jq -r ".probe[\"$svc\"].operation[\"$op\"].body // empty" "$DISCOVERY_PATH")
+
+        final_url=$(resolve_template "$endpoint_template")
+        echo "📡 [${svc}] Operation: ${op} → ${method} ${final_url}"
+
+        if [[ "$method" != "GET" ]]; then
+          if [[ -z "$body_template" ]]; then
+            echo "Body가 필요한 요청이지만 body가 없습니다. 무시합니다."
+            continue
+          fi
+          response=$(curl -sS -X "$method" "$final_url" \
+            -H 'Content-Type: application/json' \
+            -d "$body_template" || true)
+        else
+          response=$(curl -sS -X "GET" "$final_url" || true)
+        fi
+
+        if [[ -z "$response" ]]; then
+          echo "❌ ${svc}/${op} 응답이 비어 있음"
+        else
+          echo "✅ ${svc}/${op} 응답 수신 완료"
+          echo "$response"
+        fi
+        echo ""
+        sleep 1
+      done
+    done

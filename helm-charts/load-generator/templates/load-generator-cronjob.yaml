@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: load-generator
+  namespace: {{ .Release.Namespace }}
+spec:
+  successfulJobsHistoryLimit: 1
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: load-generator
+            image: {{ .Values.global.image.registry }}/curlimages-jq:8.13.0
+            command: ["/bin/bash"]
+            args: ["/scripts/load-generate.sh"]
+            volumeMounts:
+            - name: config-volume
+              mountPath: /etc/discovery
+            - name: config-volume
+              mountPath: /scripts
+          volumes:
+          - name: config-volume
+            configMap:
+              name: load-generator-config
+              items:
+              - key: service-discovery.json
+                path: discovery.json
+              - key: load-generate.sh
+                path: load-generate.sh
+                mode: 0755
