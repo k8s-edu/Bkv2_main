@@ -3,7 +3,7 @@ entries:
   colosseum:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2198885+09:00"
+    created: "2025-06-01T11:33:34.498281+09:00"
     description: colosseum helm chart
     digest: 05f2c06e5520fa830e9442dafbc08bce47b220651a463022344c4aa8d7e8e024
     name: colosseum
@@ -13,7 +13,7 @@ entries:
     version: 1.0.18
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2193855+09:00"
+    created: "2025-06-01T11:33:34.4853121+09:00"
     description: colosseum helm chart
     digest: 9bca34a773952c5a38837a00fd3f9ae50e80e7c77d38b59cbf9ab44ac6417105
     name: colosseum
@@ -23,7 +23,7 @@ entries:
     version: 1.0.17
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2077781+09:00"
+    created: "2025-06-01T11:33:34.4841465+09:00"
     description: colosseum helm chart
     digest: dae06e60e5e1a1f32e55af7c8e1408e256fbc1dc400714c5b56eb7efe7b84a50
     name: colosseum
@@ -33,7 +33,7 @@ entries:
     version: 1.0.16
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.19827+09:00"
+    created: "2025-06-01T11:33:34.4829233+09:00"
     description: colosseum helm chart
     digest: 718fa8731a2fd9e5a5e4713743fc5a118914fdcb0217c997ec48fb804f80048d
     name: colosseum
@@ -43,7 +43,7 @@ entries:
     version: 1.0.15
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1972283+09:00"
+    created: "2025-06-01T11:33:34.4821345+09:00"
     description: colosseum helm chart
     digest: 931ec1d17f6fcbc599fe06a10cb780578c4559676807cb4ae363e5724f796f65
     name: colosseum
@@ -53,7 +53,7 @@ entries:
     version: 1.0.14
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1808131+09:00"
+    created: "2025-06-01T11:33:34.4813386+09:00"
     description: colosseum helm chart
     digest: 9a63d0539964557f793bff7385f5a07fac9a44bf359a0a8194855fbaded00b7b
     name: colosseum
@@ -63,7 +63,7 @@ entries:
     version: 1.0.13
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1702146+09:00"
+    created: "2025-06-01T11:33:34.4801596+09:00"
     description: colosseum helm chart
     digest: ee601258769096a98c1db40f6681bd4bc6365c9dcd3f6eb9f6578f81a283eb79
     name: colosseum
@@ -73,7 +73,7 @@ entries:
     version: 1.0.12
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1691429+09:00"
+    created: "2025-06-01T11:33:34.4790052+09:00"
     description: colosseum helm chart
     digest: 84587982a7bd5f082ce510830cb6e0ee6c86f2bfcdedc5c3761bb5e8dcb6ac81
     name: colosseum
@@ -83,7 +83,7 @@ entries:
     version: 1.0.11
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1685589+09:00"
+    created: "2025-06-01T11:33:34.4658311+09:00"
     description: colosseum helm chart
     digest: fe219ea6624f5ba68816fa716aae3ea478f450a71e866dc76824b91b387a9d00
     name: colosseum
@@ -93,7 +93,7 @@ entries:
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.255911+09:00"
+    created: "2025-06-01T11:33:34.5053427+09:00"
     description: colosseum helm chart
     digest: a331de1b9ed9f046120b2389bb20816b1002a44525798c8553f8d7a04a2df21c
     name: colosseum
@@ -103,7 +103,7 @@ entries:
     version: 1.0.9
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2441108+09:00"
+    created: "2025-06-01T11:33:34.5037822+09:00"
     description: colosseum helm chart
     digest: 448087a4d5a80a0085d55afd7c96a2c31187839a390303efc501df62f9219ac0
     name: colosseum
@@ -113,7 +113,7 @@ entries:
     version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2344415+09:00"
+    created: "2025-06-01T11:33:34.5032098+09:00"
     description: colosseum helm chart
     digest: 6753a1cce3944a43958a4b50cefe6e9e13eca65d305b207b1bff1e72152ee555
     name: colosseum
@@ -123,7 +123,7 @@ entries:
     version: 1.0.7
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2338726+09:00"
+    created: "2025-06-01T11:33:34.5021413+09:00"
     description: colosseum helm chart
     digest: fdc204c34dc9b1532150128cf936275c29470abf4b3ec0a2713073b0b264d20a
     name: colosseum
@@ -133,7 +133,7 @@ entries:
     version: 1.0.6
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2333395+09:00"
+    created: "2025-06-01T11:33:34.5016104+09:00"
     description: colosseum helm chart
     digest: 87dead55e8115b40b8411af4df4154b25da14e2ca9a6c7e05efbf8a419aa531b
     name: colosseum
@@ -143,7 +143,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2328257+09:00"
+    created: "2025-06-01T11:33:34.5010358+09:00"
     description: colosseum helm chart
     digest: 22ecd1b9529d61d8750e0642fa278c7eca2295ad57f21f3ac2f26805f8f8a702
     name: colosseum
@@ -153,7 +153,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2317043+09:00"
+    created: "2025-06-01T11:33:34.4999984+09:00"
     description: colosseum helm chart
     digest: af39925e05b2580720abb4377da34a3cdac775eb0e389a9480275e8db15ab7ec
     name: colosseum
@@ -163,7 +163,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.2219783+09:00"
+    created: "2025-06-01T11:33:34.4993725+09:00"
     description: colosseum helm chart
     digest: 49bf469e99f273417ba01d3fc7a1a16513042c43f78911b1d3b041ae7d477005
     name: colosseum
@@ -173,7 +173,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1667138+09:00"
+    created: "2025-06-01T11:33:34.4650475+09:00"
     description: colosseum helm chart
     digest: 512598ad3105d79b91459e97b3b44b40b090d5fbfe4cad276d1c61292d55149c
     name: colosseum
@@ -183,7 +183,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.1546785+09:00"
+    created: "2025-06-01T11:33:34.4636992+09:00"
     description: colosseum helm chart
     digest: fdf2bff3bf66ab5305ada038012acb6d5bcd9d6e13047539243ad3a5f7aafc6a
     name: colosseum
@@ -198,7 +198,7 @@ entries:
           description: "Updated Fluent Bit OCI image to v3.2.2."
     apiVersion: v1
     appVersion: 3.2.2
-    created: "2025-06-01T11:09:44.2699464+09:00"
+    created: "2025-06-01T11:33:34.5171123+09:00"
     description: Fast and lightweight log processor and forwarder or Linux, OSX and
       BSD family operating systems.
     digest: 0c24ca4e39051b8d707b9fbca66aaf7bb6a690e0613b9790367e8c0e505d6f0e
@@ -233,7 +233,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.4.0
-    created: "2025-06-01T11:09:44.2988544+09:00"
+    created: "2025-06-01T11:33:34.5538183+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: e2fe430661e3b9a5d764a2c6e4734b8ddbc09a85b67d6cb1f26a7bd3c36fb4b6
     home: https://grafana.com
@@ -272,7 +272,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.1.0
-    created: "2025-06-01T11:09:44.2834859+09:00"
+    created: "2025-06-01T11:33:34.539333+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -305,7 +305,7 @@ entries:
   grafana-stack:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-06-01T11:09:44.3955421+09:00"
+    created: "2025-06-01T11:33:34.6356395+09:00"
     dependencies:
     - condition: prometheus.enabled
       name: prometheus
@@ -340,7 +340,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-06-01T11:09:44.3527118+09:00"
+    created: "2025-06-01T11:33:34.5947087+09:00"
     dependencies:
     - condition: prometheus.enabled
       name: prometheus
@@ -376,7 +376,7 @@ entries:
   jaeger:
   - apiVersion: v2
     appVersion: 1.53.0
-    created: "2025-06-01T11:09:44.4189991+09:00"
+    created: "2025-06-01T11:33:34.6607968+09:00"
     dependencies:
     - condition: provisionDataStore.cassandra
       name: cassandra
@@ -445,7 +445,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2025-06-01T11:09:44.4406658+09:00"
+    created: "2025-06-01T11:33:34.6784813+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -488,7 +488,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v0.77.2
-    created: "2025-06-01T11:09:44.4790872+09:00"
+    created: "2025-06-01T11:33:34.7078963+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -547,10 +547,21 @@ entries:
     urls:
     - kube-prometheus-stack-65.5.1.tgz
     version: 65.5.1
+  load-generator:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-06-01T11:33:34.708434+09:00"
+    description: load-generator helm chart
+    digest: 35e5728c0adff94e9701e45602d5c8488d8b7d9437826e648f1b01738df853d8
+    name: load-generator
+    type: application
+    urls:
+    - load-generator-1.0.0.tgz
+    version: 1.0.0
   loki:
   - apiVersion: v2
     appVersion: 3.3.2
-    created: "2025-06-01T11:09:44.5087374+09:00"
+    created: "2025-06-01T11:33:34.7340406+09:00"
     dependencies:
     - alias: minio
       condition: minio.enabled
@@ -587,7 +598,7 @@ entries:
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2025-06-01T11:09:44.5330656+09:00"
+    created: "2025-06-01T11:33:34.7493069+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -609,7 +620,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2025-06-01T11:09:44.5351101+09:00"
+    created: "2025-06-01T11:33:34.7506732+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -629,7 +640,7 @@ entries:
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.120.0
-    created: "2025-06-01T11:09:44.5495705+09:00"
+    created: "2025-06-01T11:33:34.7630874+09:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: b48f3784711a7a78a25498434e69e910ae6adb279e84e60a05f93fc2e9cf16d3
     home: https://opentelemetry.io/
@@ -656,7 +667,7 @@ entries:
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
     appVersion: v3.0.1
-    created: "2025-06-01T11:09:44.5663695+09:00"
+    created: "2025-06-01T11:33:34.7788459+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
@@ -707,7 +718,7 @@ entries:
   pyroscope:
   - apiVersion: v2
     appVersion: 1.10.0
-    created: "2025-06-01T11:09:44.5820549+09:00"
+    created: "2025-06-01T11:33:34.7945222+09:00"
     dependencies:
     - alias: agent
       condition: agent.enabled
@@ -739,7 +750,7 @@ entries:
   redis:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-01T11:09:44.5827508+09:00"
+    created: "2025-06-01T11:33:34.7951529+09:00"
     description: A Helm chart for Kubernetes
     digest: 2d7cbb656362eabb2507b76d1c84960e1a3a067328abb51e581d42d618a77c9f
     name: redis
@@ -750,7 +761,7 @@ entries:
   tempo:
   - apiVersion: v2
     appVersion: 2.5.0
-    created: "2025-06-01T11:09:44.5967882+09:00"
+    created: "2025-06-01T11:33:34.8118468+09:00"
     description: Grafana Tempo Single Binary Mode
     digest: 90c315909035b39c57d39178cab79cf5759c92aa4c2aabdc3eac782c9c74e123
     home: https://grafana.net
@@ -773,4 +784,4 @@ entries:
     urls:
     - tempo-1.10.3.tgz
     version: 1.10.3
-generated: "2025-06-01T11:09:44.153655+09:00"
+generated: "2025-06-01T11:33:34.4625577+09:00"
