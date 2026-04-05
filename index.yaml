@@ -3,212 +3,203 @@ entries:
   colosseum:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.018437+09:00"
+    created: "2026-04-05T15:05:57.270075+09:00"
     description: colosseum helm chart
     digest: 05f2c06e5520fa830e9442dafbc08bce47b220651a463022344c4aa8d7e8e024
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.18.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.18.tgz
     version: 1.0.18
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.018281+09:00"
+    created: "2026-04-05T15:05:57.269806+09:00"
     description: colosseum helm chart
     digest: 9bca34a773952c5a38837a00fd3f9ae50e80e7c77d38b59cbf9ab44ac6417105
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.17.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.17.tgz
     version: 1.0.17
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.0181+09:00"
+    created: "2026-04-05T15:05:57.269595+09:00"
     description: colosseum helm chart
     digest: dae06e60e5e1a1f32e55af7c8e1408e256fbc1dc400714c5b56eb7efe7b84a50
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.16.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.16.tgz
     version: 1.0.16
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.017905+09:00"
+    created: "2026-04-05T15:05:57.269364+09:00"
     description: colosseum helm chart
     digest: 718fa8731a2fd9e5a5e4713743fc5a118914fdcb0217c997ec48fb804f80048d
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.15.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.15.tgz
     version: 1.0.15
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.017687+09:00"
+    created: "2026-04-05T15:05:57.269131+09:00"
     description: colosseum helm chart
     digest: 931ec1d17f6fcbc599fe06a10cb780578c4559676807cb4ae363e5724f796f65
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.14.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.14.tgz
     version: 1.0.14
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.017338+09:00"
+    created: "2026-04-05T15:05:57.268905+09:00"
     description: colosseum helm chart
     digest: 9a63d0539964557f793bff7385f5a07fac9a44bf359a0a8194855fbaded00b7b
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.13.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.13.tgz
     version: 1.0.13
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.016966+09:00"
+    created: "2026-04-05T15:05:57.268655+09:00"
     description: colosseum helm chart
     digest: ee601258769096a98c1db40f6681bd4bc6365c9dcd3f6eb9f6578f81a283eb79
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.12.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.12.tgz
     version: 1.0.12
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.016556+09:00"
+    created: "2026-04-05T15:05:57.267741+09:00"
     description: colosseum helm chart
     digest: 84587982a7bd5f082ce510830cb6e0ee6c86f2bfcdedc5c3761bb5e8dcb6ac81
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.11.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.11.tgz
     version: 1.0.11
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.015813+09:00"
+    created: "2026-04-05T15:05:57.266221+09:00"
     description: colosseum helm chart
     digest: fe219ea6624f5ba68816fa716aae3ea478f450a71e866dc76824b91b387a9d00
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.10.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.10.tgz
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.020666+09:00"
+    created: "2026-04-05T15:05:57.272619+09:00"
     description: colosseum helm chart
     digest: a331de1b9ed9f046120b2389bb20816b1002a44525798c8553f8d7a04a2df21c
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.9.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.9.tgz
     version: 1.0.9
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.020467+09:00"
+    created: "2026-04-05T15:05:57.272398+09:00"
     description: colosseum helm chart
     digest: 448087a4d5a80a0085d55afd7c96a2c31187839a390303efc501df62f9219ac0
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.8.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.8.tgz
     version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.019977+09:00"
+    created: "2026-04-05T15:05:57.272148+09:00"
     description: colosseum helm chart
     digest: 6753a1cce3944a43958a4b50cefe6e9e13eca65d305b207b1bff1e72152ee555
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.7.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.7.tgz
     version: 1.0.7
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.019802+09:00"
+    created: "2026-04-05T15:05:57.271929+09:00"
     description: colosseum helm chart
     digest: fdc204c34dc9b1532150128cf936275c29470abf4b3ec0a2713073b0b264d20a
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.6.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.6.tgz
     version: 1.0.6
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.01962+09:00"
+    created: "2026-04-05T15:05:57.271712+09:00"
     description: colosseum helm chart
     digest: 87dead55e8115b40b8411af4df4154b25da14e2ca9a6c7e05efbf8a419aa531b
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.5.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.5.tgz
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.019434+09:00"
+    created: "2026-04-05T15:05:57.271431+09:00"
     description: colosseum helm chart
     digest: 22ecd1b9529d61d8750e0642fa278c7eca2295ad57f21f3ac2f26805f8f8a702
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.4.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.4.tgz
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.019288+09:00"
+    created: "2026-04-05T15:05:57.270678+09:00"
     description: colosseum helm chart
     digest: af39925e05b2580720abb4377da34a3cdac775eb0e389a9480275e8db15ab7ec
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.3.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.018566+09:00"
+    created: "2026-04-05T15:05:57.270309+09:00"
     description: colosseum helm chart
     digest: 49bf469e99f273417ba01d3fc7a1a16513042c43f78911b1d3b041ae7d477005
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.2.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.2.tgz
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.015573+09:00"
+    created: "2026-04-05T15:05:57.265919+09:00"
     description: colosseum helm chart
     digest: 512598ad3105d79b91459e97b3b44b40b090d5fbfe4cad276d1c61292d55149c
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.1.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.015361+09:00"
+    created: "2026-04-05T15:05:57.265612+09:00"
     description: colosseum helm chart
     digest: fdf2bff3bf66ab5305ada038012acb6d5bcd9d6e13047539243ad3a5f7aafc6a
     name: colosseum
     type: application
     urls:
-    - helm-charts/colosseum-1.0.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/colosseum-1.0.0.tgz
     version: 1.0.0
   csi-driver-nfs:
   - apiVersion: v1
     appVersion: 4.12.1
-    created: "2026-04-05T15:00:23.015098+09:00"
+    created: "2026-04-05T15:05:57.273942+09:00"
     description: CSI NFS Driver for Kubernetes
-    digest: 9ed967023da5c2a653b20101bf5859a0ebc740058235006a79e6be1ffbde9329
+    digest: bf67a4ec7f05b1178a6b8ae6358271a3a8afd5d0421cbb16b9843a458f78b5bb
     name: csi-driver-nfs
     urls:
-    - csi-driver-nfs-4.12.1.tgz
-    version: 4.12.1
-  - apiVersion: v1
-    appVersion: 4.12.1
-    created: "2026-04-05T15:00:23.021505+09:00"
-    description: CSI NFS Driver for Kubernetes
-    digest: ae5644740d68890cc6017097f9afb4e16fd8a5720e67d47af43ade8b8294ff8f
-    name: csi-driver-nfs
-    urls:
-    - helm-charts/csi-driver-nfs-4.12.1.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/csi-driver-nfs-4.12.1.tgz
     version: 4.12.1
   fluent-bit:
   - annotations:
@@ -217,7 +208,7 @@ entries:
           description: "Updated Fluent Bit OCI image to v3.2.2."
     apiVersion: v1
     appVersion: 3.2.2
-    created: "2026-04-05T15:00:23.022649+09:00"
+    created: "2026-04-05T15:05:57.274859+09:00"
     description: Fast and lightweight log processor and forwarder or Linux, OSX and
       BSD family operating systems.
     digest: 0c24ca4e39051b8d707b9fbca66aaf7bb6a690e0613b9790367e8c0e505d6f0e
@@ -240,7 +231,7 @@ entries:
     sources:
     - https://github.com/fluent/fluent-bit/
     urls:
-    - helm-charts/fluent-bit-0.48.3.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/fluent-bit-0.48.3.tgz
     version: 0.48.3
   grafana:
   - annotations:
@@ -252,7 +243,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.4.0
-    created: "2026-04-05T15:00:23.027668+09:00"
+    created: "2026-04-05T15:05:57.279946+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: e2fe430661e3b9a5d764a2c6e4734b8ddbc09a85b67d6cb1f26a7bd3c36fb4b6
     home: https://grafana.com
@@ -280,7 +271,7 @@ entries:
     - https://github.com/grafana/helm-charts
     type: application
     urls:
-    - helm-charts/grafana-8.8.2.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/grafana-8.8.2.tgz
     version: 8.8.2
   - annotations:
       artifacthub.io/license: Apache-2.0
@@ -291,7 +282,7 @@ entries:
           url: https://github.com/grafana/grafana
     apiVersion: v2
     appVersion: 11.1.0
-    created: "2026-04-05T15:00:23.025741+09:00"
+    created: "2026-04-05T15:05:57.277738+09:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: c2cb1279ee71dcb719325c401b286232cf81a44fb9f0358537e0dd5dbcafb2fa
     home: https://grafana.com
@@ -319,12 +310,12 @@ entries:
     - https://github.com/grafana/helm-charts
     type: application
     urls:
-    - helm-charts/grafana-8.3.2.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/grafana-8.3.2.tgz
     version: 8.3.2
   grafana-stack:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-04-05T15:00:23.097804+09:00"
+    created: "2026-04-05T15:05:57.348673+09:00"
     dependencies:
     - condition: prometheus.enabled
       name: prometheus
@@ -355,11 +346,11 @@ entries:
     name: grafana-stack
     type: application
     urls:
-    - helm-charts/grafana-stack-1.0.1.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/grafana-stack-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-04-05T15:00:23.066265+09:00"
+    created: "2026-04-05T15:05:57.310637+09:00"
     dependencies:
     - condition: prometheus.enabled
       name: prometheus
@@ -390,12 +381,12 @@ entries:
     name: grafana-stack
     type: application
     urls:
-    - helm-charts/grafana-stack-1.0.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/grafana-stack-1.0.0.tgz
     version: 1.0.0
   jaeger:
   - apiVersion: v2
     appVersion: 1.53.0
-    created: "2026-04-05T15:00:23.111851+09:00"
+    created: "2026-04-05T15:05:57.362296+09:00"
     dependencies:
     - condition: provisionDataStore.cassandra
       name: cassandra
@@ -440,7 +431,7 @@ entries:
     - https://hub.docker.com/u/jaegertracing/
     type: application
     urls:
-    - helm-charts/jaeger-3.4.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/jaeger-3.4.0.tgz
     version: 3.4.0
   jenkins:
   - annotations:
@@ -464,7 +455,7 @@ entries:
           url: https://github.com/jenkinsci/helm-charts/issues
     apiVersion: v2
     appVersion: 2.440.3
-    created: "2026-04-05T15:00:23.114406+09:00"
+    created: "2026-04-05T15:05:57.364841+09:00"
     description: 'Jenkins - Build great things at any scale! As the leading open source
       automation server, Jenkins provides over 1800 plugins to support building, deploying
       and automating any project. '
@@ -494,7 +485,7 @@ entries:
     - https://github.com/jenkinsci/configuration-as-code-plugin
     type: application
     urls:
-    - helm-charts/jenkins-5.1.12.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/jenkins-5.1.12.tgz
     version: 5.1.12
   kube-prometheus-stack:
   - annotations:
@@ -507,7 +498,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v0.77.2
-    created: "2026-04-05T15:00:23.132365+09:00"
+    created: "2026-04-05T15:05:57.384527+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -564,23 +555,23 @@ entries:
     - https://github.com/prometheus-operator/kube-prometheus
     type: application
     urls:
-    - helm-charts/kube-prometheus-stack-65.5.1.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/kube-prometheus-stack-65.5.1.tgz
     version: 65.5.1
   load-generator:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.13249+09:00"
+    created: "2026-04-05T15:05:57.384806+09:00"
     description: load-generator helm chart
     digest: 35e5728c0adff94e9701e45602d5c8488d8b7d9437826e648f1b01738df853d8
     name: load-generator
     type: application
     urls:
-    - helm-charts/load-generator-1.0.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/load-generator-1.0.0.tgz
     version: 1.0.0
   loki:
   - apiVersion: v2
     appVersion: 3.3.2
-    created: "2026-04-05T15:00:23.147265+09:00"
+    created: "2026-04-05T15:05:57.396013+09:00"
     dependencies:
     - alias: minio
       condition: minio.enabled
@@ -612,12 +603,12 @@ entries:
     - https://grafana.com/docs/loki/latest/
     type: application
     urls:
-    - helm-charts/loki-6.24.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/loki-6.24.0.tgz
     version: 6.24.0
   metallb:
   - apiVersion: v2
     appVersion: v0.13.10
-    created: "2026-04-05T15:00:23.148193+09:00"
+    created: "2026-04-05T15:05:57.397294+09:00"
     dependencies:
     - condition: crds.enabled
       name: crds
@@ -634,12 +625,12 @@ entries:
     - https://github.com/metallb/metallb
     type: application
     urls:
-    - helm-charts/metallb-0.13.10.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/metallb-0.13.10.tgz
     version: 0.13.10
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2026-04-05T15:00:23.14848+09:00"
+    created: "2026-04-05T15:05:57.397742+09:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -654,12 +645,12 @@ entries:
     sources:
     - https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
     urls:
-    - helm-charts/nfs-subdir-external-provisioner-4.0.18.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/nfs-subdir-external-provisioner-4.0.18.tgz
     version: 4.0.18
   opentelemetry-collector:
   - apiVersion: v2
     appVersion: 0.120.0
-    created: "2026-04-05T15:00:23.152977+09:00"
+    created: "2026-04-05T15:05:57.399511+09:00"
     description: OpenTelemetry Collector Helm chart for Kubernetes
     digest: b48f3784711a7a78a25498434e69e910ae6adb279e84e60a05f93fc2e9cf16d3
     home: https://opentelemetry.io/
@@ -674,7 +665,7 @@ entries:
     - https://github.com/open-telemetry/opentelemetry-collector-contrib
     type: application
     urls:
-    - helm-charts/opentelemetry-collector-0.117.1.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/opentelemetry-collector-0.117.1.tgz
     version: 0.117.1
   prometheus:
   - annotations:
@@ -686,7 +677,7 @@ entries:
           url: https://github.com/prometheus/prometheus
     apiVersion: v2
     appVersion: v3.0.1
-    created: "2026-04-05T15:00:23.157366+09:00"
+    created: "2026-04-05T15:05:57.40471+09:00"
     dependencies:
     - condition: alertmanager.enabled
       name: alertmanager
@@ -732,12 +723,12 @@ entries:
     - https://github.com/kubernetes/kube-state-metrics
     type: application
     urls:
-    - helm-charts/prometheus-26.0.1.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/prometheus-26.0.1.tgz
     version: 26.0.1
   pyroscope:
   - apiVersion: v2
     appVersion: 1.10.0
-    created: "2026-04-05T15:00:23.168297+09:00"
+    created: "2026-04-05T15:05:57.408455+09:00"
     dependencies:
     - alias: agent
       condition: agent.enabled
@@ -764,23 +755,23 @@ entries:
     - https://github.com/grafana/pyroscope/tree/main/operations/pyroscope/helm/pyroscope
     type: application
     urls:
-    - helm-charts/pyroscope-1.10.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/pyroscope-1.10.0.tgz
     version: 1.10.0
   redis:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-04-05T15:00:23.168397+09:00"
+    created: "2026-04-05T15:05:57.408735+09:00"
     description: A Helm chart for Kubernetes
     digest: 2d7cbb656362eabb2507b76d1c84960e1a3a067328abb51e581d42d618a77c9f
     name: redis
     type: application
     urls:
-    - helm-charts/redis-1.0.0.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/redis-1.0.0.tgz
     version: 1.0.0
   tempo:
   - apiVersion: v2
     appVersion: 2.5.0
-    created: "2026-04-05T15:00:23.168907+09:00"
+    created: "2026-04-05T15:05:57.410552+09:00"
     description: Grafana Tempo Single Binary Mode
     digest: 90c315909035b39c57d39178cab79cf5759c92aa4c2aabdc3eac782c9c74e123
     home: https://grafana.net
@@ -801,6 +792,6 @@ entries:
     - https://github.com/grafana/tempo
     type: application
     urls:
-    - helm-charts/tempo-1.10.3.tgz
+    - https://k8s-edu.github.io/Bkv2_main/helm-charts/tempo-1.10.3.tgz
     version: 1.10.3
-generated: "2026-04-05T15:00:23.013899+09:00"
+generated: "2026-04-05T15:05:57.265008+09:00"
