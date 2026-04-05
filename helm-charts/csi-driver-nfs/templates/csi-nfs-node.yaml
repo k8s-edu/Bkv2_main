@@ -101,9 +101,9 @@ spec:
               - ALL
             allowPrivilegeEscalation: true
 {{- if hasPrefix "/" .Values.image.nfs.repository }}
-          image: "{{ .Values.image.baseRepo }}{{ .Values.image.nfs.repository }}:{{ .Values.image.nfs.tag }}"
+          image: "{{ .Values.image.baseRepo }}{{ .Values.image.nfs.repository }}:{{ .Values.image.nfs.tag | default (printf "v%s" .Chart.AppVersion) }}"
 {{- else }}
-          image: "{{ .Values.image.nfs.repository }}:{{ .Values.image.nfs.tag }}"
+          image: "{{ .Values.image.nfs.repository }}:{{ .Values.image.nfs.tag | default (printf "v%s" .Chart.AppVersion) }}"
 {{- end }}
           args :
             - "--v={{ .Values.node.logLevel }}"
