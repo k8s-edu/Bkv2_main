@@ -1,7 +1,7 @@
 
 global:
   image:
-    registry: seongjumoon
+    registry: sysnet4admin
 
 monitoring:
   mode: log # log,trace,profile
